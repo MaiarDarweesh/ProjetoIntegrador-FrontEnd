@@ -2,7 +2,6 @@ body{
     background-image: url('https://i.imgur.com/kDS3gpS.jpg');
 }
 
-
 ul.social-network{
     list-style: none;
     padding: 0;
@@ -17,7 +16,6 @@ ul.social-network{
 }
 
 .img{
-    
     height: 344.01px;
 }
 
@@ -55,4 +53,6 @@ p{
     color: #c5bbbb;
 }
 
-
+.back{
+    background-color: #b7b7b7;
+}
