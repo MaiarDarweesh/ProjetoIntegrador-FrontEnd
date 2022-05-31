@@ -1,0 +1,58 @@
+body{
+    background-image: url('https://i.imgur.com/kDS3gpS.jpg');
+}
+
+
+ul.social-network{
+    list-style: none;
+    padding: 0;
+}
+
+.fa-linkedin-square{
+    font-size: 35pt;
+}
+
+.card{
+    margin-top: 20px;  
+}
+
+.img{
+    
+    height: 344.01px;
+}
+
+li{
+    text-align: center;
+}
+
+h5{
+    text-align: center;
+}
+
+p{
+    text-align: center;
+}
+
+
+.fa{
+    font-size: 35pt;
+    padding: 16px;
+}
+
+.fa-linkedin-square{
+    color: #0a66c2;
+}
+
+.fa-github{
+    color: black;
+}
+
+.fa-linkedin-square:hover{
+    color: #b7b7b7;
+}
+
+.fa-github:hover{
+    color: #c5bbbb;
+}
+
+
