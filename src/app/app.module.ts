@@ -9,7 +9,7 @@ import { ContatoComponent } from './components/contato/contato.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { SobreComponent } from './components/sobre/sobre.component';
 import { HomeComponent } from './components/home/home.component';
-import { RodapeComponent } from './rodape/rodape.component';
+import { RodapeComponent } from './components/rodape/rodape.component';
 
 @NgModule({
   declarations: [
