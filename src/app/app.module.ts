@@ -4,11 +4,17 @@ import { AppComponent } from './app.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { ContatoComponent } from './contato/contato.component';
 import { MenuComponent } from './menu/menu.component';
+import { SobreComponent } from './sobre/sobre.component';
 import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    MenuComponent,
+    SobreComponent
+  ],
+  imports: [
+    BrowserModule
     ContatoComponent,
     MenuComponent,
     HomeComponent,
