@@ -28,6 +28,18 @@
           <div class="row align-items-center remember">
             <input type="checkbox">Remember Me
           </div>
+
+        <!--Teste-->
+          <div class="form-group">
+            <label for="tipo">Você é voluntário?</label>
+              <select (change)="tipoVoluntarioo($event)" class="form-control" name="tipo" id="tipo"> 
+                <option>Você gostaria de ser voluntário?</option>
+                <option value="voluntario">Sim</option>
+                <option value="naoVoluntario">Não</option>
+            </select>
+        </div>
+        <!--/Teste-->
+
           <div class="button-group btn-group-right">
             <input type="submit" value="Cancelar" class="btn login_btn mr-1">
             <input type="submit" value="Cadastrar" class="btn login_btn">

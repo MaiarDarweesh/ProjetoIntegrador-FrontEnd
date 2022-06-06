@@ -7,6 +7,6 @@ export class Usuario {
     public cpf: string;
     public nascimento: string;
     public senha: string;
-    public voluntario: boolean;
+    public voluntario: string;
     public produto: Produto[];
 }
