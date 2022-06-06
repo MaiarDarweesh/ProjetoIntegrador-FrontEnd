@@ -7,5 +7,5 @@ export class UsuarioLogin {
         public nascimento: string;
         public senha: string;
         public token: string;
-        public voluntario: boolean;
+        public voluntario: string;
 }
