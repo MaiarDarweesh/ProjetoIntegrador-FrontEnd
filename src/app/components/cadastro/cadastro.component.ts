@@ -5,10 +5,10 @@ import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-cadastrar',
-  templateUrl: './cadastrar.component.html',
-  styleUrls: ['./cadastrar.component.css']
+  templateUrl: './cadastro.component.html',
+  styleUrls: ['./cadastro.component.css']
 })
-export class CadastrarComponent implements OnInit {
+export class CadastroComponent implements OnInit {
 
   usuario: Usuario = new Usuario;
   confirmarSenha: string;
