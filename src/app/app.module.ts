@@ -13,6 +13,8 @@ import { HomeComponent } from './components/home/home.component';
 import { RodapeComponent } from './components/rodape/rodape.component';
 import { ProdutosComponent } from './components/produtos/produtos.component';
 import { HttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -29,9 +31,13 @@ import { HttpClient } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [{
+    provide: LocationStrategy,
+    useClass: HashLocationStrategy
+  }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
