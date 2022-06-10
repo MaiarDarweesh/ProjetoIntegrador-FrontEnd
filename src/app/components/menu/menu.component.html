@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg">
     <img src="https://i.imgur.com/uAMvmpT.png" width="70px">
     <a href="#" class="navbar-brand">Projeto<b>Vida</b></a>
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -7,33 +7,25 @@
     <!-- Collection of nav links, forms, and other content for toggling -->
     <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
         <div class="navbar-nav">
-            <a href="#" class="nav-item nav-link">Home</a>
+            <a href="#" class="nav-item nav-link btn-hover">Home</a>
 
-            <a href="#" class="nav-item nav-link">Catálogo</a>
+            <a href="#" class="nav-item nav-link btn-hover">Catálogo</a>
 
-            <a href="#" class="nav-item nav-link">Contato</a>
+            <a href="#" class="nav-item nav-link btn-hover">Contato</a>
         </div>
         <div class="nav-item dropdown">
-            <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle">O Projeto</a>
+            <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle btn-hover">O Projeto</a>
             <div class="dropdown-menu">
-                <a href="#" class="dropdown-item">Idealizadores</a>
-                <a href="#" class="dropdown-item">Seja um Voluntário</a>
-                <a href="#" class="dropdown-item">Saiba mais</a>
+                <a href="#" class="dropdown-item bt btn-hover">Idealizadores</a>
+                <a href="#" class="dropdown-item btn-hover">Seja um Voluntário</a>
+                <a href="#" class="dropdown-item btn-hover">Saiba mais</a>
             </div>
         </div>
         <div class="navbar-nav ml-auto action-buttons">
             <div class="nav-item dropdown">
-                <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle mr-4">Entrar</a>
+                <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle mr-4 btn-hover">Entrar</a>
                 <div class="dropdown-menu action-form">
                     <form action="/examples/actions/confirmation.php" method="post">
-                        <p class="hint-text">Entre com a sua rede social</p>
-                        <div class="form-group social-btn clearfix">
-                            <a href="#" class="btn btn-secondary facebook-btn float-left"><i class="fa fa-facebook"></i>
-                                Facebook</a>
-                            <a href="#" class="btn btn-secondary twitter-btn float-right"><i class="fa fa-twitter"></i>
-                                Twitter</a>
-                        </div>
-                        <div class="or-seperator"><b>ou</b></div>
                         <div class="form-group">
                             <input [(ngModel)]="usuarioLogin.usuario" type="text" class="form-control"
                                 placeholder="Usuário" required="required">
