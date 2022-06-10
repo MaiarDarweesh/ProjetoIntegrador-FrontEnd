@@ -6,8 +6,9 @@ body {
 	font-weight: normal;
 	font-size: 13px;
 }
+
 .navbar {
-	background: #fff;
+	background: #f7f7f7;
 	padding-left: 16px;
 	padding-right: 16px;
 	border-bottom: 1px solid #dfe3e8;
@@ -36,6 +37,11 @@ body {
 	color: #888;
 	font-size: 15px;
 }
+
+.btn-hover:hover{
+	color: #33cabb!important;
+}
+
 .search-box {
 	position: relative;
 }	
