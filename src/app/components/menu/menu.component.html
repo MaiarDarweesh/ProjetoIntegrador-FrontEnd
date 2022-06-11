@@ -18,21 +18,18 @@
         <div class="nav-item dropdown">
             <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle btn-hover">O Projeto</a>
             <div class="dropdown-menu">
-
-                <a href="#sobre" class="dropdown-item bt btn-hover">Idealizadores</a>
+                <a href="#" class="dropdown-item btn-hover">Idealizadores</a>
                 <a href="#" class="dropdown-item btn-hover">Seja um Voluntário</a>
                 <a href="#" class="dropdown-item btn-hover">Saiba mais</a>
-
             </div>
         </div>
         <div class="navbar-nav ml-auto action-buttons">
 
-            <a *ngIf="!isLogged" routerLink="/login" data-toggle="dropdown"
-                class="nav-link mr-4 btn-hover">Entrar</a>
+
+            <a *ngIf="!isLogged" routerLink="/login" data-toggle="dropdown" class="nav-link mr-4 btn-hover">Entrar</a>
 
             <a *ngIf="!isLogged" routerLink="/cadastro" data-toggle="dropdown"
                 class="btn btn-primary sign-up-btn">Cadastre-se</a>
-
         </div>
     </div>
 </nav>
