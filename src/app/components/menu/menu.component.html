@@ -18,20 +18,34 @@
         <div class="nav-item dropdown">
             <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle btn-hover">O Projeto</a>
             <div class="dropdown-menu">
-
-                <a href="#sobre" class="dropdown-item bt btn-hover">Idealizadores</a>
+                <a href="#" class="dropdown-item btn-hover">Idealizadores</a>
                 <a href="#" class="dropdown-item btn-hover">Seja um Voluntário</a>
                 <a href="#" class="dropdown-item btn-hover">Saiba mais</a>
-
             </div>
         </div>
         <div class="navbar-nav ml-auto action-buttons">
-            
-                <a routerLink="/login"  data-toggle="dropdown" class="nav-link mr-4 btn-hover">Entrar</a>
-           
-                <a routerLink="/cadastro" data-toggle="dropdown" class="btn btn-primary sign-up-btn">Cadastre-se</a>
-                
-            
+            <div class="nav-item dropdown">
+                <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle mr-4 btn-hover">Entrar</a>
+                <div class="dropdown-menu action-form">
+                    <form action="/examples/actions/confirmation.php" method="post">
+                        <div class="form-group">
+                            <input [(ngModel)]="usuarioLogin.usuario" type="text" class="form-control"
+                                placeholder="Usuário" required="required">
+                        </div>
+                        <div class="form-group">
+                            <input [(ngModel)]="usuarioLogin.senha" type="password" class="form-control"
+                                placeholder="Senha" required="required">
+                        </div>
+                        <input (click)="entrar()" type="submit" class="btn btn-primary btn-block" value="Entrar">
+                        <div class="text-center mt-2">
+                            <a href="#">Esqueceu sua senha?</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="nav-item dropdown">
+                <a routerLink="/cadastrar" data-toggle="dropdown" class="btn btn-primary dropdown-toggle sign-up-btn">Cadastre-se</a>
+            </div>
         </div>
     </div>
 </nav>
