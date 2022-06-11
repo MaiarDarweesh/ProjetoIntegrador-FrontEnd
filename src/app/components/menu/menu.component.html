@@ -16,7 +16,7 @@
         <div class="nav-item dropdown">
             <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle btn-hover">O Projeto</a>
             <div class="dropdown-menu">
-                <a href="#" class="dropdown-item bt btn-hover">Idealizadores</a>
+                <a href="#" class="dropdown-item btn-hover">Idealizadores</a>
                 <a href="#" class="dropdown-item btn-hover">Seja um Voluntário</a>
                 <a href="#" class="dropdown-item btn-hover">Saiba mais</a>
             </div>
@@ -42,51 +42,7 @@
                 </div>
             </div>
             <div class="nav-item dropdown">
-                <a href="#" data-toggle="dropdown" class="btn btn-primary dropdown-toggle sign-up-btn">Cadastre-se</a>
-                <div class="dropdown-menu action-form">
-                    <form action="/examples/actions/confirmation.php" method="post">
-                        <p class="hint-text">Crie aqui a sua conta!</p>
-
-                        <div class="form-group">
-                            <input [(ngModel)]="usuario.nome" type="text" class="form-control" placeholder="Nome"
-                                required="required">
-                        </div>
-
-                        <div class="form-group">
-                            <input [(ngModel)]="usuario.usuario" type="text" class="form-control" placeholder="E-mail"
-                                required="required">
-                        </div>
-
-                        <div class="form-group">
-                            <input [(ngModel)]="usuario.cpf" class="form-control" type="text" name="CPF" id="CPF"
-                                placeholder="CPF" required="required">
-                        </div>
-
-                        <div class="form-group">
-                            <input (input)="confirmaSenha($event)" type="password" class="form-control"
-                                placeholder="Senha" required="required">
-                        </div>
-                        <div class="form-group">
-                            <input [(ngModel)]="usuario.senha" type="password" class="form-control"
-                                placeholder="Confirme sua senha" required="required">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="tipo">Tipo de usuário</label>
-                            <select (change)="tipoUser($event)" class="form-control" name="tipo" id="tipo">
-                                <option>Gostaria de ser voluntário?</option>
-                                <option value="sim">Sim</option>
-                                <option value="não">Não</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-check-label"><input type="checkbox" required="required"> Eu aceito os <a
-                                    href="#">Termos &amp; Condições</a></label>
-                        </div>
-                        <input (click)="cadastrar()" type="submit" class="btn btn-primary btn-block" value="Cadastrar">
-                    </form>
-                </div>
+                <a routerLink="/cadastrar" data-toggle="dropdown" class="btn btn-primary dropdown-toggle sign-up-btn">Cadastre-se</a>
             </div>
         </div>
     </div>
