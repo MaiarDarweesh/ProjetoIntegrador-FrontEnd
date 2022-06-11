@@ -10,25 +10,25 @@
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fas fa-user"></i></span>
             </div>
-            <input [(ngModel)]='usuarioLogin.nome' type="text" class="form-control" placeholder="Nome Completo">
+            <input [(ngModel)]='usuarioLogin.nome' name="nome" type="text" class="form-control" placeholder="Nome Completo">
           </div>
           <div class="input-group form-group">
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fas fa-key"></i></span>
             </div>
-            <input [(ngModel)]='usuarioLogin.usuario' type="email" class="form-control" placeholder="E-mail">
+            <input [(ngModel)]='usuarioLogin.usuario' name="usuario" type="email" class="form-control" placeholder="E-mail">
           </div>
           <div class="input-group form-group">
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fas fa-key"></i></span>
             </div>
-            <input (input)="confirmaSenha($event)"  type="password" class="form-control" placeholder="Senha">
+            <input [(ngModel)]='usuarioLogin.senha'  name="password" type="password" class="form-control" placeholder="Senha">
           </div>
           <div class="input-group form-group">
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fas fa-key"></i></span>
             </div>
-            <input [(ngModel)]='usuarioLogin.senha' type="password" class="form-control" placeholder="Confirme sua senha">
+            <input (input)="confirmaSenha($event)" name="confirmpassword" type="password" class="form-control" placeholder="Confirme sua senha">
           </div>
           <div class="row align-items-center remember">
             <input type="checkbox">Remember Me

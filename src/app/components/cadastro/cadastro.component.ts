@@ -13,7 +13,6 @@ export class CadastroComponent implements OnInit {
 
   usuarioLogin: UsuarioLogin = new UsuarioLogin
 
-  usuario: Usuario = new Usuario;
   confirmarSenha: string;
   tipoVoluntario: string
 
@@ -35,15 +34,17 @@ export class CadastroComponent implements OnInit {
   }
 
   cadastrar() {
-    this.usuario.voluntario = this.tipoVoluntario
-    if (this.usuario.senha != this.confirmarSenha) {
+    this.usuarioLogin.voluntario = this.tipoVoluntario
+    if (this.usuarioLogin.senha != this.confirmarSenha) {
       alert('As senhas estão diferentes')
     } else {
-      this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
-        this.usuario = resp
-        this.router.navigate(['/entrar'])
+      this.authService.cadastrar(this.usuarioLogin).subscribe((resp: UsuarioLogin) => {
+        this.usuarioLogin = resp
+        this.router.navigate(['/login'])
         alert('Usuario cadastrado com sucesso!')
       })
     }
   }
+
+
 } 

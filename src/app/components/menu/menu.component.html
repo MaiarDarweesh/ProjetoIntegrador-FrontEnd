@@ -26,12 +26,13 @@
             </div>
         </div>
         <div class="navbar-nav ml-auto action-buttons">
-            
-                <a routerLink="/login"  data-toggle="dropdown" class="nav-link mr-4 btn-hover">Entrar</a>
-           
-                <a routerLink="/cadastro" data-toggle="dropdown" class="btn btn-primary sign-up-btn">Cadastre-se</a>
-                
-            
+
+            <a *ngIf="!isLogged" routerLink="/login" data-toggle="dropdown"
+                class="nav-link mr-4 btn-hover">Entrar</a>
+
+            <a *ngIf="!isLogged" routerLink="/cadastro" data-toggle="dropdown"
+                class="btn btn-primary sign-up-btn">Cadastre-se</a>
+
         </div>
     </div>
 </nav>

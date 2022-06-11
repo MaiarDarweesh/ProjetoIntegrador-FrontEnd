@@ -11,14 +11,15 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
-                        <input [(ngModel)]='usuarioLogin.usuario' type="email" class="form-control"
+                        <input [(ngModel)]='usuarioLogin.usuario' name="usuario" type="email" class="form-control"
                             placeholder="E-mail">
-                    </div>
+                    </div> 
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
-                        <input type="password" class="form-control" placeholder="Senha">
+                        <input [(ngModel)]='usuarioLogin.senha' type="password" name="senha" class="form-control"
+                            placeholder="Senha">
                     </div>
                     <div class="row align-items-center remember">
                         <input type="checkbox">Remember Me
@@ -26,8 +27,7 @@
 
 
                     <div class="button-group btn-group-right ">
-                        <input type="submit" value="Cancelar" class="btn login_btn mr-1">
-                        <input type="submit" value="Cadastrar" class="btn login_btn">
+                        <input (click)="entrar()" type="submit" value="Entrar" class="btn login_btn">
                     </div>
                 </form>
             </div>
