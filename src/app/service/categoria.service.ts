@@ -18,23 +18,23 @@ export class CategoriaService {
   }
 
   getAllCategoria(): Observable<Categoria[]> {
-    return this.http.get<Categoria[]>('http://localhost:8080/categorias', this.token)
+    return this.http.get<Categoria[]>('https://vidaprojeto.herokuapp.com/categorias', this.token)
   }
 
   getByIdCategoria(id: number): Observable<Categoria>{
-    return this.http.get<Categoria>(`http://localhost:8080/categorias/${id}`, this.token)
+    return this.http.get<Categoria>(`https://vidaprojeto.herokuapp.com/categorias/${id}`, this.token)
   }
 
   postCategoria(categoria: Categoria): Observable<Categoria> {
-    return this.http.post<Categoria>('http://localhost:8080/categorias', categoria, this.token)
+    return this.http.post<Categoria>('https://vidaprojeto.herokuapp.com/categorias', categoria, this.token)
   }
 
   putCategoria(categoria: Categoria): Observable<Categoria> {
-    return this.http.put<Categoria>('http://localhost:8080/categorias', categoria, this.token)
+    return this.http.put<Categoria>('https://vidaprojeto.herokuapp.com/categorias', categoria, this.token)
   }
 
   deleteCategoria(id: number) {
-    return this.http.delete(`http://localhost:8080/categorias/${id}`, this.token)
+    return this.http.delete(`https://vidaprojeto.herokuapp.com/categorias/${id}`, this.token)
   }
 
 }

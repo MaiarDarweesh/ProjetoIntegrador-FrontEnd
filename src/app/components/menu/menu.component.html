@@ -7,16 +7,16 @@
     <!-- Collection of nav links, forms, and other content for toggling -->
     <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
         <div class="navbar-nav">
-            <a href="#" class="nav-item nav-link">Home</a>
+            <a href="#home" class="nav-item nav-link">Home</a>
 
-            <a href="#" class="nav-item nav-link">Catálogo</a>
+            <a href="#produtos" class="nav-item nav-link">Catálogo</a>
 
-            <a href="#" class="nav-item nav-link">Contato</a>
+            <a href="#contato" class="nav-item nav-link">Contato</a>
         </div>
         <div class="nav-item dropdown">
             <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle">O Projeto</a>
             <div class="dropdown-menu">
-                <a href="#" class="dropdown-item">Idealizadores</a>
+                <a href="#sobre" class="dropdown-item">Idealizadores</a>
                 <a href="#" class="dropdown-item">Seja um Voluntário</a>
                 <a href="#" class="dropdown-item">Saiba mais</a>
             </div>
@@ -63,11 +63,6 @@
                         <div class="form-group">
                             <input [(ngModel)]="usuario.usuario" type="text" class="form-control" placeholder="E-mail"
                                 required="required">
-                        </div>
-
-                        <div class="form-group">
-                            <input [(ngModel)]="usuario.cpf" class="form-control" type="text" name="CPF" id="CPF"
-                                placeholder="CPF" required="required">
                         </div>
 
                         <div class="form-group">
