@@ -41,7 +41,7 @@ export class ProdutosComponent implements OnInit {
       this.router.navigate(['login'])
 
       this.getAllProdutos()
-      //   this.getAllCategoria()
+      this.getAllCategoria()
     }
 
     this.findAllProdutos()

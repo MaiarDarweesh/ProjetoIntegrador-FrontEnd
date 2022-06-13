@@ -22,8 +22,7 @@ export class CadastroComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    window.scroll(0, 0)
-  }
+     }
 
   confirmaSenha(event: any) {
     this.confirmarSenha = event.target.value
