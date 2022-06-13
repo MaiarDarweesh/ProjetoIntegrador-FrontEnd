@@ -20,10 +20,11 @@ const routes: Routes = [
   {path:'contato', component: ContatoComponent },
   {path:'menu', component: MenuComponent },
   {path:'rodape', component: RodapeComponent },
-  {path:'login', component: LoginComponent },
+  
   {path:'produtos', component: ProdutosComponent },
   {path:'produto-edit/:id', component:ProdutoEditComponent},
-  {path:'produto-delete/:id',component:ProdutoDeleteComponent}                                                      
+  {path:'produto-delete/:id',component:ProdutoDeleteComponent},
+  {path:'login', component: LoginComponent }                                                  
 
 
 ];
