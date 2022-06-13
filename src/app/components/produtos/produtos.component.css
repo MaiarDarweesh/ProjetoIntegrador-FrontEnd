@@ -16,6 +16,17 @@
     border: none;
 }
 
+.btn-1{
+    background-color: #31bfb1 !important;
+    border: none;
+}
+
+.btn-1:hover{
+    background-color: #31bfb1!important;
+    border: none;
+    color: white;
+}
+
 .btn-primary:hover{
     background-color: #53a1eb!important;
     color: #f6f3f7!important;
