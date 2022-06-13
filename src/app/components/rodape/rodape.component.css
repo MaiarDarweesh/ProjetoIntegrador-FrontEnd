@@ -1,4 +1,17 @@
 /*rodape*/
 .logo{
-    width: 240px;
+    width: 130px;
+}
+
+.fonte{
+    font-size: small;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0rem;
+}
+
+.pt-4, .py-4 {
+    padding-top: 1rem!important;
 }
