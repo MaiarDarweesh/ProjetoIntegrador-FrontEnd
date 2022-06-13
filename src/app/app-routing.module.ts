@@ -22,7 +22,7 @@ const routes: Routes = [
   {path:'contato', component: ContatoComponent },
   {path:'menu', component: MenuComponent },
   {path:'rodape', component: RodapeComponent },
-  {path:'produtos', component: ProdutosComponent } 
+  {path:'produtos', component: ProdutosComponent },
 
   {path:'produto-edit/:id', component:ProdutoEditComponent},
   {path:'produto-delete/:id',component:ProdutoDeleteComponent}                                                      

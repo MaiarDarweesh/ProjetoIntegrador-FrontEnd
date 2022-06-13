@@ -14,13 +14,11 @@ import { HomeComponent } from './components/home/home.component';
 import { RodapeComponent } from './components/rodape/rodape.component';
 import { ProdutosComponent } from './components/produtos/produtos.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-<<<<<<< HEAD
 import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
 import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
-=======
 import { ApiInterceptor } from './interceptor/http-interceptor';
 import { RouterModule } from '@angular/router';
->>>>>>> 8828e4ac4b548d91e107c6631c68130485966519
+
 
 @NgModule({
   declarations: [

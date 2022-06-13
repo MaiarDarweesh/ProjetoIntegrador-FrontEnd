@@ -21,16 +21,8 @@ export class AuthService {
     return this.http.post<UsuarioLogin>('usuario/cadastrar', usuarioLogin)
   }
 
-<<<<<<< HEAD
-
-
-
-  
 
   logado(){
-=======
-  isLogged(){
->>>>>>> 8828e4ac4b548d91e107c6631c68130485966519
     let ok: boolean = false
 
     if(session.token != ''){

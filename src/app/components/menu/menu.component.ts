@@ -20,9 +20,9 @@ export class MenuComponent implements OnInit {
 
   ) {
 
-    route.params.subscribe(val => {
+   /* route.params.subscribe(val => {
       this.isLogged = auth.isLogged()
-    });
+    });*/
   }
 
   ngOnInit() {
