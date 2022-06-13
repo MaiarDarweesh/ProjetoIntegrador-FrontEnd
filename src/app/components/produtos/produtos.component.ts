@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Produto } from 'src/app/model/Produto';
+import { ProdutoService } from 'src/app/service/produto.service';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-produtos',
@@ -7,12 +11,45 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProdutosComponent implements OnInit {
 
+  produto:Produto = new Produto()
+  listaProduto: Produto []
+
   title = 'newsmart';
   myimage:string = "https://i.imgur.com/2U02d5X.jpg"
 
-  constructor() { }
+  constructor(
+ private router: Router,
+ private produtoService: ProdutoService
+
+
+
+  ) { }
 
   ngOnInit() {
-  }
+    if(environment.token == ''){
+      this.router.navigate(['entrar'])
 
-}
+    } 
+
+    this.findAllProdutos()
+  }
+    findAllProdutos(){
+      this.produtoService.getAllProduto().subscribe((resp: Produto[]) => {
+        this.listaProduto = resp 
+
+      
+      } )
+
+
+    }
+
+
+    cadastrar(){
+      this.produtoService.postProduto(this.produto).subscribe((resp: Produto)=>{
+          this.produto = resp
+          alert('Produto cadastrado com sucesso !!')
+          this.findAllProdutos()
+          this.produto = new Produto ()
+      })  
+    }
+  }
