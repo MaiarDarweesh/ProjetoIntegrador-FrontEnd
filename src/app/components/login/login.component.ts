@@ -19,8 +19,7 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    window.scroll(0, 0)
-  }
+     }
 
   entrar() {
     this.auth.entrar(this.usuarioLogin).subscribe({
