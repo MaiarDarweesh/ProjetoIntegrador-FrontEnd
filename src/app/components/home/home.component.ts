@@ -34,6 +34,7 @@ export class HomeComponent implements OnInit {
 
   ) { }
 
+<<<<<<< HEAD
   ngOnInit(): void {
     if(environment.token == ''){
         this.router.navigate(['/entrar'])
@@ -41,6 +42,9 @@ export class HomeComponent implements OnInit {
 
     this.getAllProdutos()
     this.getAllCategoria()
+=======
+  ngOnInit() {
+>>>>>>> 8828e4ac4b548d91e107c6631c68130485966519
   }
 
   getAllProdutos()

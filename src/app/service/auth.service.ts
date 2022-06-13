@@ -1,10 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment.prod';
-import { Usuario } from '../model/Usuario';
 import { UsuarioLogin } from '../model/UsuarioLogin';
-
+import { session } from '../session';
 
 @Injectable({
   providedIn: 'root'
@@ -16,22 +14,26 @@ export class AuthService {
   ) { }
 
   entrar(usuarioLogin: UsuarioLogin): Observable<UsuarioLogin> {
-    return this.http.post<UsuarioLogin> ('https://projetovida.herokuapp.com/usuario/logar', usuarioLogin)
+    return this.http.post<UsuarioLogin> ('usuario/logar', usuarioLogin)
   }
 
-  cadastrar(usuario: Usuario): Observable<Usuario> {
-    return this.http.post<Usuario>('https://projetovida.herokuapp.com/usuario/cadastrar', usuario)
+  cadastrar(usuarioLogin: UsuarioLogin): Observable<UsuarioLogin> {
+    return this.http.post<UsuarioLogin>('usuario/cadastrar', usuarioLogin)
   }
 
+<<<<<<< HEAD
 
 
 
   
 
   logado(){
+=======
+  isLogged(){
+>>>>>>> 8828e4ac4b548d91e107c6631c68130485966519
     let ok: boolean = false
 
-    if(environment.token != ''){
+    if(session.token != ''){
       ok = true
     }
 

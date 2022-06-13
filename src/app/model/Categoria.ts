@@ -9,4 +9,4 @@ export class Categoria {
     public preco: number;
     public foto: string;
     public produto: Produto;
-    }
+    } 
