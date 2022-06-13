@@ -23,6 +23,11 @@ export class AuthService {
     return this.http.post<Usuario>('https://projetovida.herokuapp.com/usuario/cadastrar', usuario)
   }
 
+
+
+
+  
+
   logado(){
     let ok: boolean = false
 

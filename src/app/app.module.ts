@@ -15,6 +15,8 @@ import { ProdutosComponent } from './components/produtos/produtos.component';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
+import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     CadastroComponent,
     HomeComponent,
     RodapeComponent,
+    ProdutoEditComponent,
+    ProdutoDeleteComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,4 +44,4 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
   }],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule{}
