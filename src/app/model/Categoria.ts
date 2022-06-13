@@ -6,7 +6,7 @@ export class Categoria {
     public produtos: string;
     public cursos: string;
     public quantidade: number;
-    public preco: number;
+    public preco: number; 
     public foto: string;
     public produto: Produto;
-    }
+    } 
