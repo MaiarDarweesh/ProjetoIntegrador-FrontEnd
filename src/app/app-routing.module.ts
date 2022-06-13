@@ -11,9 +11,9 @@ import { SobreComponent } from './components/sobre/sobre.component';
 
 const routes: Routes = [
 
-  {path:'' , redirectTo: 'login', pathMatch: 'full'},
+  {path:'' , redirectTo: 'home', pathMatch: 'full'},
 
-  {path:'login', component: LoginComponent },
+
   {path:'cadastro', component: CadastroComponent },
   {path:'home', component: HomeComponent },
   {path:'sobre', component: SobreComponent},

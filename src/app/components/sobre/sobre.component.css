@@ -1,5 +1,9 @@
-body{
-    background-image: url('https://i.imgur.com/kDS3gpS.jpg');
+/* body {
+	font-family: 'Varela Round', sans-serif;
+} */
+
+body {
+    font-family: 'Open Sans', sans-serif;
 }
 
 ul.social-network{
@@ -51,8 +55,4 @@ p{
 
 .fa-github:hover{
     color: #c5bbbb;
-}
-
-.back{
-    background-color: #b7b7b7;
 }

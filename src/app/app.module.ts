@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -12,9 +13,9 @@ import { SobreComponent } from './components/sobre/sobre.component';
 import { HomeComponent } from './components/home/home.component';
 import { RodapeComponent } from './components/rodape/rodape.component';
 import { ProdutosComponent } from './components/produtos/produtos.component';
-import { HttpClient } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { ApiInterceptor } from './interceptor/http-interceptor';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -33,11 +34,14 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     AppRoutingModule,
     HttpClientModule,
     FormsModule
+    //RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})
   ],
   providers: [{
     provide: LocationStrategy,
-    useClass: HashLocationStrategy
-  }],
+    useClass: HashLocationStrategy,
+    },
+  { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true }
+],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

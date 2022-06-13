@@ -18,22 +18,22 @@ export class ProdutoService {
   }
 
   getAllProduto(): Observable<Produto[]> {
-    return this.http.get<Produto[]>('http://localhost:8080/produtos', this.token)
+    return this.http.get<Produto[]>('produtos', this.token)
   }
 
   getByIdProduto(id: number): Observable<Produto> {
-    return this.http.get<Produto>(`http://localhost:8080/produtos/${id}`, this.token)
+    return this.http.get<Produto>(`produtos/${id}`, this.token)
   }
 
   postProduto(produto: Produto): Observable<Produto> {
-    return this.http.post<Produto>('http://localhost:8080/produtos', produto, this.token)
+    return this.http.post<Produto>('produtos', produto, this.token)
   }
 
   putProduto(produto: Produto): Observable<Produto> {
-    return this.http.put<Produto>('http://localhost:8080/produtos', produto, this.token)
+    return this.http.put<Produto>('produtos', produto, this.token)
 
   }
   deleteProduto(id: number) {
-    return this.http.delete(`http://localhost:8080/produtos/${id}`, this.token)
+    return this.http.delete(`produtos/${id}`, this.token)
   }
 }
