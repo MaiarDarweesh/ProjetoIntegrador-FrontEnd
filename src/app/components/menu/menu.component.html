@@ -10,7 +10,7 @@
 
             <a href="#home" class="nav-item nav-link btn-hover">Home</a>
 
-            <a href="#produtos" class="nav-item nav-link btn-hover">Catálogo</a>
+            <a href="#produtos" class="nav-item nav-link btn-hover">Produtos</a>
 
             <a href="#contato" class="nav-item nav-link btn-hover">Contato</a>
 
@@ -18,18 +18,59 @@
         <div class="nav-item dropdown">
             <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle btn-hover">O Projeto</a>
             <div class="dropdown-menu">
-                <a href="#" class="dropdown-item btn-hover">Idealizadores</a>
+                <a href="#sobre" class="dropdown-item btn-hover">Idealizadores</a>
                 <a href="#" class="dropdown-item btn-hover">Seja um Voluntário</a>
-                <a href="#" class="dropdown-item btn-hover">Saiba mais</a>
+                <a href="#" class="dropdown-item btn-hover" data-toggle="modal" data-target="#modalExemplo">Saiba mais</a>
             </div>
         </div>
         <div class="navbar-nav ml-auto action-buttons">
 
+            <a routerLink="/login" class="nav-link mr-4 btn-hover">Entrar</a>
 
-            <a *ngIf="!isLogged" routerLink="/login" data-toggle="dropdown" class="nav-link mr-4 btn-hover">Entrar</a>
+            <a routerLink="/cadastro" class="btn btn-primary sign-up-btn">Cadastre-se</a>
 
-            <a *ngIf="!isLogged" routerLink="/cadastro" data-toggle="dropdown"
-                class="btn btn-primary sign-up-btn">Cadastre-se</a>
         </div>
     </div>
 </nav>
+
+<!-- Modal -->
+<div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Projeto Vida</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body justify-text">
+
+                <h3>Missão</h3>
+                <p class="justify-text-">Apoiar crianças, jovens, mulheres e famílias em situação de vulnerabilidade social ,
+                    condicionando doações e
+                    um direcionamento ao futuro atraves de cursos preparatorios profissionalizantes,
+                    inserindo assim esse individuo a sociedade e
+                    ao mercado de trabalho. </p>
+
+                <h3>Visão</h3>
+                <p> Ser reconhecida como instituição de promoção do desenvolvimento dos direitos basicos
+                    de qualidade a todos,
+                    afim de erradicar a linha de pobreza do nosso planeta e de oferecer acesso
+                    democrático a bens culturais,
+                    de educação, de moradia e de proteção à vida.</p>
+                <h3>Valores</h3>
+                <p>Agimos com propósito de preservação de valores familiares, fortalecimento de
+                    vínculos, honestidade, transparência
+                    e coerência em nossas ações e relações, abrangendo o respeito pela diversidade
+                    social, cultural, ambiental e econômica.
+                </p>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>

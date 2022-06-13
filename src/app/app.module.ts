@@ -32,7 +32,7 @@ import { RouterModule } from '@angular/router';
     HomeComponent,
     RodapeComponent,
     ProdutoEditComponent,
-    ProdutoDeleteComponent,
+    ProdutoDeleteComponent
   ],
   imports: [
     BrowserModule,

@@ -14,8 +14,6 @@ import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component
 const routes: Routes = [
 
   {path:'' , redirectTo: 'home', pathMatch: 'full'},
-
-
   {path:'cadastro', component: CadastroComponent },
   {path:'home', component: HomeComponent },
   {path:'sobre', component: SobreComponent},
@@ -23,7 +21,6 @@ const routes: Routes = [
   {path:'menu', component: MenuComponent },
   {path:'rodape', component: RodapeComponent },
   {path:'produtos', component: ProdutosComponent },
-
   {path:'produto-edit/:id', component:ProdutoEditComponent},
   {path:'produto-delete/:id',component:ProdutoDeleteComponent}                                                      
 
@@ -35,4 +32,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-

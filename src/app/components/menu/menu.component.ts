@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UsuarioLogin } from 'src/app/model/UsuarioLogin';
 import { AuthService } from 'src/app/service/auth.service';
-import { session } from 'src/app/session';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-menu',
@@ -10,26 +11,27 @@ import { session } from 'src/app/session';
 })
 export class MenuComponent implements OnInit {
 
-  isLogged: boolean
+  nome = environment.nome
+  foto = environment.foto
 
   constructor(
 
-    private router: Router,
-    private auth: AuthService,
-    route: ActivatedRoute
+    private router: Router
 
-  ) {
-
-   /* route.params.subscribe(val => {
-      this.isLogged = auth.isLogged()
-    });*/
-  }
+  ) { }
 
   ngOnInit() {
 
   }
 
+  sair() {
+    this.router.navigate(['/entrar'])
+    environment.token = ''
+    environment.nome = ''
+    environment.foto = ''
+    environment.id = 0
 
-
+  }
 }
+
 
