@@ -80,17 +80,20 @@ export class ProdutosComponent implements OnInit {
       })
     }
 
+    findAllCategoria(){
+      this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
+        this.listacategorias = resp
+      })
+    }
 
-    publicar(){
-      this.produto.id = this.idProduto
-      this.categoria.produto = this.produto
 
+    cadastrarCategoria(){
       this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria) => {
         this.categoria = resp
-        alert('Categoria realizada com sucesso!')
+        alert('Categoria cadastrada com sucesso!')
+        this.findAllCategoria()
         this.categoria = new Categoria()
-        this.getAllCategoria()
-
+        
       })
     }
   }
