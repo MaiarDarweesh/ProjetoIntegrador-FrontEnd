@@ -18,6 +18,7 @@ import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component
 import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
 import { ApiInterceptor } from './interceptor/http-interceptor';
 import { RouterModule } from '@angular/router';
+import { CompraComponent } from './compra/compra.component';
 import { VoluntarioComponent } from './voluntario/voluntario.component';
 
 
@@ -34,6 +35,7 @@ import { VoluntarioComponent } from './voluntario/voluntario.component';
     RodapeComponent,
     ProdutoEditComponent,
     ProdutoDeleteComponent,
+    CompraComponent,
     VoluntarioComponent
   ],
   imports: [
