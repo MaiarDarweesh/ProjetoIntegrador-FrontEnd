@@ -20,6 +20,7 @@ import { ApiInterceptor } from './interceptor/http-interceptor';
 import { RouterModule } from '@angular/router';
 import { CompraComponent } from './compra/compra.component';
 import { VoluntarioComponent } from './voluntario/voluntario.component';
+import { CarrinhoComponent } from './carrinho/carrinho.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { VoluntarioComponent } from './voluntario/voluntario.component';
     ProdutoEditComponent,
     ProdutoDeleteComponent,
     CompraComponent,
-    VoluntarioComponent
+    VoluntarioComponent,
+    CarrinhoComponent
   ],
   imports: [
     BrowserModule,
