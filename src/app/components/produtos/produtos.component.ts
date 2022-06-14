@@ -30,6 +30,7 @@ export class ProdutosComponent implements OnInit {
   idProduto = environment.id
 
   constructor(
+    private router: Router,
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
     private authService: AuthService
@@ -95,4 +96,11 @@ export class ProdutosComponent implements OnInit {
 
     })
   }
+
+  alert(){
+    alert('Item doado! Obrigado :)')
+    
+  }
+
+
 }
