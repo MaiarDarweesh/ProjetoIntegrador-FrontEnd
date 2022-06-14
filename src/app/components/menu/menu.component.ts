@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UsuarioLogin } from 'src/app/model/UsuarioLogin';
 import { AuthService } from 'src/app/service/auth.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -10,7 +11,7 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class MenuComponent implements OnInit {
 
-  nome = environment.nome
+  nome=environment.nome
   nomeUsuario: string
 
 
@@ -22,12 +23,13 @@ export class MenuComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.nomeUsuario = environment.nome
-
+    console.log(environment.nome)
+    console.log(this.nome)
+    
   }
 
   sair() {
-    environment.token = ''
+   environment.token = ''
     environment.nome = ''
     environment.voluntario = ''
     environment.id = 0

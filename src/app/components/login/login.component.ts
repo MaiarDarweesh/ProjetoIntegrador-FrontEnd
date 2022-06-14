@@ -31,6 +31,9 @@ export class LoginComponent implements OnInit {
         environment.token = this.usuarioLogin.token
         environment.nome = this.usuarioLogin.nome
         environment.id = this.usuarioLogin.id
+
+        console.log(environment.nome)
+
         this.router.navigate(['/home'])
       },
       error: erro => {
