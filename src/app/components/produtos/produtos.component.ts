@@ -30,7 +30,6 @@ export class ProdutosComponent implements OnInit {
   idProduto = environment.id
 
   constructor(
-    private router: Router,
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
     private authService: AuthService
@@ -38,10 +37,10 @@ export class ProdutosComponent implements OnInit {
 
   ngOnInit() {
     if (environment.token == '') {
-      this.router.navigate(['login'])
+
 
       this.getAllProdutos()
-      //   this.getAllCategoria()
+      this.getAllCategoria()
     }
 
     this.findAllProdutos()
@@ -75,22 +74,25 @@ export class ProdutosComponent implements OnInit {
     })
   }
 
-  getAllCategoria(){
-      this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
-      })
-    }
-
-
-    publicar(){
-      this.produto.id = this.idProduto
-      this.categoria.produto = this.produto
-
-      this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria) => {
-        this.categoria = resp
-        alert('Categoria realizada com sucesso!')
-        this.categoria = new Categoria()
-        this.getAllCategoria()
-
-      })
-    }
+  getAllCategoria() {
+    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
+    })
   }
+
+  findAllCategoria() {
+    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
+      this.listacategorias = resp
+    })
+  }
+
+
+  cadastrarCategoria() {
+    this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria) => {
+      this.categoria = resp
+      alert('Categoria cadastrada com sucesso!')
+      this.findAllCategoria()
+      this.categoria = new Categoria()
+
+    })
+  }
+}

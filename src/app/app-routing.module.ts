@@ -11,23 +11,27 @@ import { SobreComponent } from './components/sobre/sobre.component';
 import { CompraComponent } from './compra/compra.component';
 import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
 import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
+import { VoluntarioComponent } from './voluntario/voluntario.component';
 
 const routes: Routes = [
 
-  {path:'' , redirectTo: 'home', pathMatch: 'full'},
+  //Mandado o site iniciar na página Home 
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  //Outras rotas
+  { path: 'cadastro', component: CadastroComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'sobre', component: SobreComponent },
+  { path: 'contato', component: ContatoComponent },
+  { path: 'menu', component: MenuComponent },
+  { path: 'rodape', component: RodapeComponent },
+  { path: 'produtos', component: ProdutosComponent },
+  {path:'compra', component: CompraComponent},       
+  
+  { path: 'produto-edit/:id', component: ProdutoEditComponent },
+  { path: 'produto-delete/:id', component: ProdutoDeleteComponent },
+  { path: 'voluntario', component: VoluntarioComponent }
 
-
-  {path:'cadastro', component: CadastroComponent },
-  {path:'home', component: HomeComponent },
-  {path:'sobre', component: SobreComponent},
-  {path:'contato', component: ContatoComponent },
-  {path:'menu', component: MenuComponent },
-  {path:'rodape', component: RodapeComponent },
-  {path:'produtos', component: ProdutosComponent },
-  {path:'compra', component: CompraComponent},          
-
-  {path:'produto-edit/:id', component:ProdutoEditComponent},
-  {path:'produto-delete/:id',component:ProdutoDeleteComponent},
 
 
 ];
@@ -37,4 +41,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-

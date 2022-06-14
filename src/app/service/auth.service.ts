@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.prod';
+import { Usuario } from '../model/Usuario';
 import { UsuarioLogin } from '../model/UsuarioLogin';
-import { session } from '../session';
 
 @Injectable({
   providedIn: 'root'
@@ -21,11 +22,14 @@ export class AuthService {
     return this.http.post<UsuarioLogin>('usuario/cadastrar', usuarioLogin)
   }
 
+  getByIdUser(id: number): Observable<Usuario> {
+    return this.http.get<Usuario>(`usuario/${id}`)
+  }
 
   logado(){
     let ok: boolean = false
 
-    if(session.token != ''){
+    if(environment.token != ''){
       ok = true
     }
 

@@ -19,6 +19,7 @@ import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.c
 import { ApiInterceptor } from './interceptor/http-interceptor';
 import { RouterModule } from '@angular/router';
 import { CompraComponent } from './compra/compra.component';
+import { VoluntarioComponent } from './voluntario/voluntario.component';
 
 
 @NgModule({
@@ -35,13 +36,13 @@ import { CompraComponent } from './compra/compra.component';
     ProdutoEditComponent,
     ProdutoDeleteComponent,
     CompraComponent,
+    VoluntarioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule
-    //RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})
   ],
   providers: [{
     provide: LocationStrategy,

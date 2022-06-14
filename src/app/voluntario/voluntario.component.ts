@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Usuario } from 'src/app/model/Usuario';
-import { UsuarioLogin } from 'src/app/model/UsuarioLogin';
-import { AuthService } from 'src/app/service/auth.service';
+import { UsuarioLogin } from '../model/UsuarioLogin';
+import { AuthService } from '../service/auth.service';
 
 @Component({
-  selector: 'app-cadastrar',
-  templateUrl: './cadastro.component.html',
-  styleUrls: ['./cadastro.component.css']
+  selector: 'app-voluntario',
+  templateUrl: './voluntario.component.html',
+  styleUrls: ['./voluntario.component.css']
 })
-export class CadastroComponent implements OnInit {
+export class VoluntarioComponent implements OnInit {
 
+ 
   usuarioLogin: UsuarioLogin = new UsuarioLogin
 
   confirmarSenha: string;
@@ -22,7 +22,6 @@ export class CadastroComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    window.scroll(0,0)
      }
 
   confirmaSenha(event: any) {
