@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsuarioLogin } from 'src/app/model/UsuarioLogin';
 import { AuthService } from 'src/app/service/auth.service';
-import { session } from 'src/app/session';
+import { environment } from 'src/environments/environment.prod';
+
 
 @Component({
   selector: 'app-login',
@@ -19,15 +20,17 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-     }
+    window.scroll(0,0)
+
+  }
 
   entrar() {
     this.auth.entrar(this.usuarioLogin).subscribe({
       next: (resp: UsuarioLogin) => {
         this.usuarioLogin = resp
-        session.token = this.usuarioLogin.token
-        session.nome = this.usuarioLogin.nome
-        session.id = this.usuarioLogin.id 
+        environment.token = this.usuarioLogin.token
+        environment.nome = this.usuarioLogin.nome
+        environment.id = this.usuarioLogin.id
         this.router.navigate(['/home'])
       },
       error: erro => {

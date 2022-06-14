@@ -18,6 +18,7 @@ import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component
 import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
 import { ApiInterceptor } from './interceptor/http-interceptor';
 import { RouterModule } from '@angular/router';
+import { VoluntarioComponent } from './voluntario/voluntario.component';
 
 
 @NgModule({
@@ -32,14 +33,14 @@ import { RouterModule } from '@angular/router';
     HomeComponent,
     RodapeComponent,
     ProdutoEditComponent,
-    ProdutoDeleteComponent
+    ProdutoDeleteComponent,
+    VoluntarioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule
-    //RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})
   ],
   providers: [{
     provide: LocationStrategy,
