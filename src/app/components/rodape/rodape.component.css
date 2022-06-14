@@ -15,3 +15,50 @@ p {
 .pt-4, .py-4 {
     padding-top: 1rem!important;
 }
+
+.footer-hover:hover{
+	color: #33cabb!important;
+}
+
+a:hover{
+	color: #888;
+	font-size: 15px;
+    color: #33cabb!important;
+}
+
+.fa:hover{
+    font-size: 15pt;
+}
+
+.navbar {
+	padding-left: 16px;
+	padding-right: 16px;
+	border-radius: 0;
+}
+.nav-link img {
+	border-radius: 50%;
+	width: 36px;
+	height: 36px;
+	margin: -8px 0;
+	float: left;
+	margin-right: 10px;
+}
+.navbar .navbar-brand {
+	padding-left: 0;
+	font-size: 20px;
+	padding-right: 50px;
+}
+.navbar .navbar-brand b {
+	color: #33cabb;		
+}
+.navbar .form-inline {
+	display: inline-block;
+}
+.navbar a {
+	color: #888;
+	font-size: 15px;
+}
+
+.btn-hover:hover{
+	color: #33cabb!important;
+}
