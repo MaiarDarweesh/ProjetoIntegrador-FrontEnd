@@ -9,6 +9,7 @@ import { ProdutosComponent } from './components/produtos/produtos.component';
 import { RodapeComponent } from './components/rodape/rodape.component';
 import { SobreComponent } from './components/sobre/sobre.component';
 import { CompraComponent } from './compra/compra.component';
+
 import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
 import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
 import { VoluntarioComponent } from './voluntario/voluntario.component';
