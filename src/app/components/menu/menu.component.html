@@ -29,14 +29,13 @@
 
             <div class="navbar-nav ml-auto action-buttons">
 
+                <a *ngIf='authService.logado() == false' routerLink="/login"
+                    class="btn btn-primary sign-up-btn">Entrar</a>
 
-                    <button class="btn btn-primary sign-up-btn" routerLink='/login'
-            *ngIf='authService.logado() == false'>Entrar</button>
 
                 <div *ngIf='authService.logado() == true' class="col pt-3 d-flex align-items-center">
-                    <p class="nav-item nav-link btn-hover mr-3">Olá, </p>
-                    <p>{{nomeUsuario}}</p>
-                    <a (click)='sair()' routerLink='/home' id="sair"><i class="fa fa-sign-out ml-5"
+                    <p class="nav-item nav-link btn-hover ">Olá, Visitante!  </p>
+                    <a (click)='sair()' routerLink='/home' id="sair"><i class="fa fa-sign-out mb-3"
                             aria-hidden="true"></i></a>
                 </div>
 

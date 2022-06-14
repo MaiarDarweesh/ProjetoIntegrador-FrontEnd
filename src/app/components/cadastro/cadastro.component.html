@@ -23,7 +23,7 @@
                   </div>
                   <div>
                     <label class="form-label mt-3" for="senha">Senha</label>
-                    <input (input)="confirmaSenha($event)"  name="senha" type="text" id="senha" class="form-control" placeholder="Sua senha"/>
+                    <input (input)="confirmaSenha($event)"  name="senha" type="password" id="senha" class="form-control" placeholder="Sua senha"/>
                   </div>
                 </div>
               </div>
@@ -33,7 +33,7 @@
 
                   <div class="form-outline">
                     <label class="form-label mt-3" for="confirmarSenha">Confirmar senha</label>
-                    <input [(ngModel)]='usuarioLogin.senha' type="text" id="confirmarSenha" name="confirmarSenha" class="form-control" placeholder="Confirme a senha"/>
+                    <input [(ngModel)]='usuarioLogin.senha' type="password" id="confirmarSenha" name="confirmarSenha" class="form-control" placeholder="Confirme a senha"/>
                   </div>
                   <div class="form-label mt-2">
                     <label class="form-label mt-4" for="senha">Tipo de usuário:</label>
