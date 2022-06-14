@@ -9,7 +9,7 @@ export class CarrinhoComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(){
   }
 
 }

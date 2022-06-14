@@ -34,8 +34,6 @@ const routes: Routes = [
   { path: 'voluntario', component: VoluntarioComponent },
   { path:  'carrinho', component: CarrinhoComponent}
 
-
-
 ];
 
 @NgModule({
