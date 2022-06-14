@@ -18,6 +18,7 @@ import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component
 import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
 import { ApiInterceptor } from './interceptor/http-interceptor';
 import { RouterModule } from '@angular/router';
+import { CompraComponent } from './compra/compra.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { RouterModule } from '@angular/router';
     RodapeComponent,
     ProdutoEditComponent,
     ProdutoDeleteComponent,
+    CompraComponent,
   ],
   imports: [
     BrowserModule,

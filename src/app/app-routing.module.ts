@@ -8,6 +8,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { ProdutosComponent } from './components/produtos/produtos.component';
 import { RodapeComponent } from './components/rodape/rodape.component';
 import { SobreComponent } from './components/sobre/sobre.component';
+import { CompraComponent } from './compra/compra.component';
 import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
 import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
 
@@ -23,9 +24,10 @@ const routes: Routes = [
   {path:'menu', component: MenuComponent },
   {path:'rodape', component: RodapeComponent },
   {path:'produtos', component: ProdutosComponent },
+  {path:'compra', component: CompraComponent},          
 
   {path:'produto-edit/:id', component:ProdutoEditComponent},
-  {path:'produto-delete/:id',component:ProdutoDeleteComponent}                                                      
+  {path:'produto-delete/:id',component:ProdutoDeleteComponent},
 
 
 ];
