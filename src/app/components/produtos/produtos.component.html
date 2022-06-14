@@ -1,6 +1,6 @@
 <!-- Search form -->
 <div class="container">
-    
+
     <div class=" row d-flex ">
         <h3 class="justify-content-center searchText mb-3">Busque aqui os produtos que deseja:</h3>
 
@@ -20,19 +20,19 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header text-center">
-                <h4 class="modal-title w-100 font-weight-bold">Cadastrar produto</h4>
+                <h4 class="modal-title w-100 font-weight-bold">Doar produto</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body mx-3">
                 <div class="form-group">
-                    <label for="titulo">Título</label>
+                    <label for="titulo">Nome do objeto</label>
                     <input name="titulo" type="text" class="form-control" id="titulo">
                 </div>
 
                 <div class="form-group">
-                    <label for="foto">Foto do produto</label>
+                    <label for="foto">Foto do objeto</label>
                     <input name="foto" type="text" class="form-control" id="foto" placeholder="Link da foto">
                 </div>
 
@@ -42,21 +42,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="preco">Preço do produto</label>
-                    <input name="preco" type="text" class="form-control" id="preco">
-                </div>
-
-                <div class="form-group">
-                    <label for="tema">Categorias:<a data-dismiss="modal" href="#modal">cadastre um
-                            novo</a>:</label>
-                    <select name="tema" id="tema" class="form-control">
-                        <option>categoria</option>
-                    </select>
+                    <label for="endereco">Endereço para a retirada</label>
+                    <textarea class="form-control" name="endereco" id="endereco" rows="2"></textarea>
                 </div>
 
             </div>
             <div class="modal-footer d-flex justify-content-center">
-                <button class="btn btn-1">Cadastrar</button>
+                <button class="btn btn-1" data-dismiss="modal" (click)='alert()'>Doar</button>
             </div>
         </div>
     </div>
@@ -98,8 +90,7 @@
 
 
 <div class="text-center justify-content-end mt-5">
-    <a href="" class="btn btn-1 btn-rounded mb-4" data-toggle="modal" data-target="#modalRegisterForm">Cadastrar
-        produto</a>
+    <a href="" class="btn btn-1 btn-rounded mb-4" data-toggle="modal" data-target="#modalRegisterForm">Doe aqui!</a>
 </div>
 
 <div class="container">
