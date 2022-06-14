@@ -7,28 +7,29 @@
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="
-                            https://i.imgur.com/HsDcmM2.png" alt="Primeiro Slide">
+                <div class="row">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active justify-content-center">
+                            <img class="d-block w-100" src="https://i.imgur.com/pZNS8hC.jpg" alt="Primeiro Slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" height="749" src="https://i.imgur.com/s0fDaVN.jpg"
+                                alt="Segundo Slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" height="749" src="https://i.imgur.com/m9RrCp7.jpg"
+                                alt="Terceiro Slide">
+                        </div>
                     </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="
-                            https://i.imgur.com/jiPfDm4.png" alt="Segundo Slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="
-                        https://i.imgur.com/DNOxfcv.png" alt="Terceiro Slide">
-                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon bg-secondary" aria-hidden="true"></span>
+                        <span class="sr-only">Anterior</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon bg-secondary" aria-hidden="true"></span>
+                        <span class="sr-only">Próximo</span>
+                    </a>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon bg-secondary" aria-hidden="true"></span>
-                    <span class="sr-only">Anterior</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon bg-secondary" aria-hidden="true"></span>
-                    <span class="sr-only">Próximo</span>
-                </a>
             </div>
         </div>
 
@@ -37,26 +38,98 @@
             <!-- Jumbotron -->
             <div class=" jumbotron-fluid bg-light">
                 <div class="container">
-                    <h5 class="">Descrição</h5>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat nisi nobis
-                        rerum
-                        ullam officia quisquam, libero obcaecati voluptates eos temporibus, maiores eius porro
-                        maxime
-                        fugit
-                        quis magnam, facere odio iusto?</p>
+                    <h5 class="">Playstation 4</h5>
 
-                    <div class="">
-                        <div class="col-md-6">
-                            <h6>Valor</h6>
-                        </div>
+                    <p> Acompanha:
+                        2 controles - Cabo HDMI - Cabo de força e jogos
+                    </p>
+                    <p>
+                        Jogos:
+                        God of war
+                        The last of us
+                        The last of us 2
+                        Infamous second son
+                        Horizon zero down
+                        Detroit
+                        Heavy rain
+                        Beyond two souls
+                    </p>
 
-                        <button class="btn btn-danger">Comprar</button>
+
+
+                    <div class="col-md-6 float-right">
+                    </div>
+                    <h6>Valor</h6>
+                    <span>R$</span>
+                    1399,00
+                    <div class="mb-3">
+                        <span>no boleto ou via Pix.</span>
                     </div>
 
+                    <button class="btn btn-danger" data-toggle="modal" data-target="#staticBackdrop">Comprar</button>
                 </div>
             </div>
             <!-- /Jumbotron -->
 
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Comprar</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+
+                            <div class="modal-body">
+                                <p>Escolha a forma de pagamento:</p>
+                            </div>
+
+                            <div class="modal-body">
+
+                                <div class="input-group mb-3">
+
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text" for="formadepagamento">Forma de
+                                            pagamento</label>
+                                    </div>
+
+                                    <select>
+                                        <option value="" disabled selected>Selecione</option>
+                                        <option value="cartao">Pix</option>
+                                        <option value="boleto">Boleto</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <form>
+                                        <p>
+                                            <input type="text" class="p-2 m-2" placeholder="Seu nome">
+                                        </p>
+                                    </form>
+                                    <input type="text" class="form-control" placeholder="email@exemplo.com"
+                                        aria-label="email" aria-describedby="basic-addon2">
+                                </div>
+
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-success">Finalizar compra</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
+
+
+
     </div>
 </div>
