@@ -98,3 +98,31 @@
 .esquerda{
     margin-left: 50px;
 }
+
+  .searchBox {
+    color: #33cabb;
+  }
+
+  .searchText{
+    margin-left: 315px;
+    margin-bottom: 10px;
+  }
+
+  .searchBar{width: 50%; /* define a largura do campo */ 
+    position: relative;  /* cria o contexto de posicionamento do botão */ 
+    align-items: center;
+    margin-left: 270px;
+  }
+
+  label {display:block;}
+  input {width: 50%;} /* define a largura do campo igual a largura do container */
+  input,  button {padding: 10px;}
+  button {
+    position: absolute;   
+    top: 0; 
+    right: 0;
+    /* posiciona o botão em relação ao container, mas
+    como o campo está exatamente contido no container
+    o posicionamento se dá também em relação ao campo */
+  }
+

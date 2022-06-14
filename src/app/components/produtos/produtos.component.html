@@ -1,3 +1,19 @@
+<!-- Search form -->
+<div class="container">
+    
+    <div class=" row d-flex ">
+        <h3 class="justify-content-center searchText mb-3">Busque aqui os produtos que deseja:</h3>
+
+        <div class="col-md-12  justify-content-center">
+            <form class="form-inline ">
+                <input class="form-control searchBar " name="busca" type="search" placeholder="Search"
+                    aria-label="Search">
+                <i class="fas fa-search ml-2 searchBox " aria-hidden="true"></i>
+            </form>
+        </div>
+    </div>
+</div>
+
 <!-- Botões cadastrar produto e categoria -->
 <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
     aria-hidden="true">
@@ -59,7 +75,8 @@
             <div class="modal-body mx-3">
                 <div class="form-group">
                     <label for="nome">Nome</label>
-                    <input [(ngModel)]='categoria.produtos' name="nome" type="text" class="form-control" id="nome" placeholder="Nome da categoria">
+                    <input [(ngModel)]='categoria.produtos' name="nome" type="text" class="form-control" id="nome"
+                        placeholder="Nome da categoria">
                 </div>
 
                 <div class="form-group">
@@ -78,12 +95,9 @@
 </div>
 <!-- Fim dos botões cadastrar -->
 
-<div class="text-center">
-    <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">Launch
-        Modal Login Form</a>
-</div>
 
-<div class="text-center">
+
+<div class="text-center justify-content-end mt-5">
     <a href="" class="btn btn-1 btn-rounded mb-4" data-toggle="modal" data-target="#modalRegisterForm">Cadastrar
         produto</a>
 </div>

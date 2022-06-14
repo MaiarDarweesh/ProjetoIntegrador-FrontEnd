@@ -11,7 +11,7 @@
 
               <div class="form-outline mb-3">
                 <label class="form-label" for="nome">Nome</label>
-                <input [(ngModel)]='usuarioLogin.nome' type="text" id="nome" class="form-control" placeholder="Seu nome e sobrenome"/>
+                <input [(ngModel)]='usuarioLogin.nome' name="nome" type="text" id="nome" class="form-control" placeholder="Seu nome e sobrenome"/>
               </div>
 
               <div class="row">
@@ -19,25 +19,25 @@
 
                   <div class="form-outline">
                     <label class="form-label" for="usuario">Usuário</label>
-                    <input [(ngModel)]='usuarioLogin.usuario' type="text" id="usuario" class="form-control" placeholder="Seu email"/>
+                    <input [(ngModel)]='usuarioLogin.usuario' name="usuario" type="text" id="usuario" class="form-control" placeholder="Seu email"/>
                   </div>
                   <div>
                     <label class="form-label mt-3" for="senha">Senha</label>
-                    <input [(ngModel)]='usuarioLogin.senha' type="text" id="senha" class="form-control" placeholder="Sua senha"/>
+                    <input (input)="confirmaSenha($event)"  name="senha" type="text" id="senha" class="form-control" placeholder="Sua senha"/>
                   </div>
                 </div>
               </div>
-
+              
               <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
                 <div class="col-md-6">
 
                   <div class="form-outline">
                     <label class="form-label mt-3" for="confirmarSenha">Confirmar senha</label>
-                    <input type="text" id="confirmarSenha" class="form-control" placeholder="Confirme a senha"/>
+                    <input [(ngModel)]='usuarioLogin.senha' type="text" id="confirmarSenha" name="confirmarSenha" class="form-control" placeholder="Confirme a senha"/>
                   </div>
                   <div class="form-label mt-2">
-                    <label class="form-label mt-4" for="senha">Voluntário</label>
-                    <select class="custom-select" required>
+                    <label class="form-label mt-4" for="senha">Tipo de usuário:</label>
+                    <select (change)="tipoVoluntarioo($event)" class="custom-select" required>
                       <option value="1">Você é voluntário?</option>
                       <option value="1">Sim</option>
                       <option value="2">Não</option>
@@ -45,12 +45,11 @@
                   </div>
                 </div>
               </div>
-              <div class="d-flex justify-content-center">
-                <button type="submit" class="btn btn-success btn-lg mr-4">Cadastrar</button>
-              <button type="submit" class="btn btn-danger btn-lg">Cancelar</button>
+              <div class="d-flex justify-content-center ">
+                <button  (click)="cadastrar()" type="submit" class="btn btn-success btn-lg mr-4">Cadastrar</button>
+              <button routerLink="/home" type="submit" class="btn btn-danger btn-lg">Cancelar</button>
               </div>
             </form>
-
           </div>
         </div>
       </div>
