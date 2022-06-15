@@ -10,6 +10,8 @@ export class ContatoComponent implements OnInit {
   constructor() { }
 
   ngOnInit(){
+    window.scroll(0,0)
+
   }
 
 }

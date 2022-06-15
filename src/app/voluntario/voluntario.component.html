@@ -26,7 +26,7 @@
                                     </div>
                                     <div>
                                         <label class="form-label mt-3" for="senha">Senha</label>
-                                        <input [(ngModel)]='usuarioLogin.senha' name="senha" type="text" id="senha"
+                                        <input (input)="confirmaSenha($event)" name="senha" type="password" id="senha"
                                             class="form-control" placeholder="Sua senha" />
                                     </div>
                                 </div>
@@ -37,15 +37,15 @@
 
                                     <div class="form-outline">
                                         <label class="form-label mt-1" for="confirmarSenha">Confirmar senha</label>
-                                        <input type="text" id="confirmarSenha" name="confirmarSenha" class="form-control"
+                                        <input [(ngModel)]='usuarioLogin.senha' type="password" id="confirmarSenha" name="confirmarSenha" class="form-control"
                                             placeholder="Confirme a senha" />
                                     </div>
                                     
-                                </div><h5 class="mt-4 ml-3 justify-content-center">Parabéns por se voluntariar!</h5>
+                                </div>
                             </div>
                             <div class="d-flex justify-content-center">
-                                <button type="submit" class="btn btn-success btn-lg mr-4">Cadastrar</button>
-                                <button type="submit" class="btn btn-danger btn-lg">Cancelar</button>
+                                <button (click)="voluntario()" type="submit" class="btn btn-success btn-lg mr-4">Cadastrar</button>
+                                <button routerLink="/home" type="submit" class="btn btn-danger btn-lg">Cancelar</button>
                             </div>
                         </form>
 
