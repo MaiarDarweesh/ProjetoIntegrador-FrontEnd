@@ -21,6 +21,7 @@ import { RouterModule } from '@angular/router';
 import { CompraComponent } from './compra/compra.component';
 import { VoluntarioComponent } from './voluntario/voluntario.component';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
+import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { CarrinhoComponent } from './carrinho/carrinho.component';
     ProdutoDeleteComponent,
     CompraComponent,
     VoluntarioComponent,
-    CarrinhoComponent
+    CarrinhoComponent,
+    UsuarioEditComponent
   ],
   imports: [
     BrowserModule,

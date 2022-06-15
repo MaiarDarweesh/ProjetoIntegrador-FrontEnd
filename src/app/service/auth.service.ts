@@ -31,6 +31,10 @@ export class AuthService {
     return this.http.get<Usuario>(`usuario/${id}`)
   }
 
+  usuarioById(id: number):Observable<UsuarioLogin>{
+    return this.http.get<UsuarioLogin>(`usuarios/${id}`, this.token)
+  }
+
   logado(){
     let ok: boolean = false
 

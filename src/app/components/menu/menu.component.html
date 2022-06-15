@@ -37,7 +37,11 @@
 
                 <div *ngIf='authService.logado() == true' class="col pt-3 d-flex align-items-center">
                     <p class="nav-item nav-link btn-hover ">Olá, Visitante!  </p>
+
+                    <a [routerLink]="['/usuario-edit', id]"><i class="fa fa-pencil-square-o mb-3 btn-hover" aria-hidden="true"></i></a>
+
                     <a href="" routerLink="/carrinho" ><i class="fa fa-cart-plus mb-3 btn-hover" aria-hidden="true"></i></a> 
+
                     <a (click)='sair()' routerLink='/home' id="sair"><i class="fa fa-sign-out mb-3 btn-hover"
                             aria-hidden="true"></i></a>
                 </div>

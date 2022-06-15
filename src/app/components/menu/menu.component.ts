@@ -13,6 +13,7 @@ export class MenuComponent implements OnInit {
 
   nome=environment.nome
   nomeUsuario: string
+  id = environment.id
 
 
   constructor(
