@@ -25,7 +25,7 @@ export class CompraComponent implements OnInit {
 
   alert(){
     alert('Compra finalizada! Confira seu email.')
-    this.router.navigate(['/home'])
+    this.router.navigate(['/produtos'])
   
   }
 

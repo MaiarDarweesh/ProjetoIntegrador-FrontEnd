@@ -17,11 +17,13 @@ export class VoluntarioComponent implements OnInit {
   tipoVoluntario: string
 
   constructor(
-    private authService: AuthService,
+    private auth: AuthService,
     private router: Router
   ) { }
 
   ngOnInit() {
+    window.scroll(0,0)
+
      }
 
   confirmaSenha(event: any) {
@@ -32,18 +34,9 @@ export class VoluntarioComponent implements OnInit {
     this.tipoVoluntario = event.target.value
   }
 
-  cadastrar() {
-    this.usuarioLogin.voluntario = this.tipoVoluntario
-    if (this.usuarioLogin.senha != this.confirmarSenha) {
-      alert('As senhas estão diferentes')
-    } else {
-      this.authService.cadastrar(this.usuarioLogin).subscribe((resp: UsuarioLogin) => {
-        this.usuarioLogin = resp
-        this.router.navigate(['/login'])
-        alert('Usuario cadastrado com sucesso!')
-      })
-    }
-  }
-
+  voluntario() {
+           alert('Parabéns por se voluntariar!')
+      }
+    
 
 } 

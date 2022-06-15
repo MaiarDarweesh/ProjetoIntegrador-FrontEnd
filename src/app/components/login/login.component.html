@@ -1,6 +1,6 @@
 <section class="h-100 h-custom ">
-    <div class="container py-4 h-100 justify-content-center">
-        <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="container py-4 h-100 justify-content-center mb-5">
+        <div class="row d-flex justify-content-center align-items-center h-100 mb-5">
             <div class="col-lg-8 col-xl-6">
                 <div class="card rounded-3 ">
                     <img class="ml-3 mt-2" src="https://i.imgur.com/75CsdcL.png" width="500" height="300"
@@ -11,30 +11,31 @@
                         <form class="px-md-2">
 
                             <div class="row">
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-6">
 
                                     <div class="form-outline">
                                         <label class="form-label" for="usuario">Usuário</label>
-                                        <input [(ngModel)]='usuarioLogin.usuario' name="usuario" type="text" id="usuario"
-                                            class="form-control" placeholder="Seu email" />
+                                        <input [(ngModel)]='usuarioLogin.usuario' name="usuario" type="text"
+                                            id="usuario" class="form-control" placeholder="Seu email" />
                                     </div>
                                     <div>
                                         <label class="form-label mt-3" for="senha">Senha</label>
-                                        <input [(ngModel)]='usuarioLogin.senha'name="senha" type="password" id="senha"
+                                        <input [(ngModel)]='usuarioLogin.senha' name="senha" type="password" id="senha"
                                             class="form-control" placeholder="Sua senha" />
                                     </div>
                                 </div>
-                                <div class="col-md-12 d-flex justify-content-start mt-2 mb-3">
+                                <div class="col-md-12 d-flex justify-content-start mb-3">
                                     <h6> Não possui conta? <a routerLink='/cadastro'>Faça seu cadastro aqui</a></h6>
                                 </div>
                             </div>
-                            <div class="d-flex justify-content-center mt-3">
-                                <button (click)="entrar()" type="submit" class="btn btn-success btn-lg mr-4">Entrar</button>
+                            <div class="d-flex justify-content-center mb-3">
+                                <button (click)="entrar()" type="submit"
+                                    class="btn btn-success btn-lg mr-4">Entrar</button>
                                 <button routerLink="/home" type="submit" class="btn btn-danger btn-lg">Cancelar</button>
 
-                                
+
                             </div>
-                            
+
                         </form>
 
                     </div>
