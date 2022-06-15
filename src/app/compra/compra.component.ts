@@ -19,7 +19,14 @@ export class CompraComponent implements OnInit {
     // private alertas: AlertsService
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    window.scroll(0,0)
+  }
+
+  alert(){
+    alert('Compra finalizada! Confira seu email.')
+    this.router.navigate(['/home'])
+  
   }
 
   // validarPagamento(pagamento: string){
