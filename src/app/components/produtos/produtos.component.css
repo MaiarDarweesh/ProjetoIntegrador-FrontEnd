@@ -117,4 +117,7 @@
   label {display:block;} 
   input,  button {padding: 10px;}
 
-  
+  .text-uppercase{
+    text-decoration: none;
+    color: white; 
+  } 

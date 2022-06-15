@@ -25,4 +25,30 @@
 }
 h2 {
     color: green;
+}
+
+.btn:focus{
+    outline: none!important;
+    box-shadow: none!important;
+}
+
+.btn-primary{
+    background-color: #2c4b48!important;
+    border: none;
+}
+
+.btn-1{
+    background-color: #33cabb !important;
+    border: none;
+}
+
+.btn-1:hover{
+    background-color: #33cabb!important;
+    border: none;
+    color: white;
+}
+
+.btn-primary:hover{
+    background-color: #33cabb!important;
+    color: #f6f3f7!important;
 } 
