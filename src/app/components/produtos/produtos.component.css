@@ -79,6 +79,7 @@
 
 .carrinho{
     background: #33cabb;
+    text-decoration: none;
 }   
 
 .carrinho:hover{
@@ -112,6 +113,11 @@
     position: relative;  /* cria o contexto de posicionamento do botão */ 
     align-items: center;
     margin-left: 270px;
+  }
+
+  .text-uppercase{
+    text-decoration: none;
+    color: white;
   }
 
   label {display:block;} 

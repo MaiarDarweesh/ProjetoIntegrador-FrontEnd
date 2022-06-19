@@ -19,15 +19,14 @@ export class ProdutosComponent implements OnInit {
   listaProduto: Produto[]
 
 
-  title = 'newsmart';
-  myimage: string = "https://i.imgur.com/2U02d5X.jpg"
-
-
   categoria: Categoria = new Categoria()
-  listacategorias: Categoria[]
+  listaCategorias: Categoria[]
 
   user: Usuario = new Usuario()
+  idUser = environment.id
+
   idProduto = environment.id
+  idCategoria: number
 
   constructor(
     private router: Router,
@@ -41,27 +40,29 @@ export class ProdutosComponent implements OnInit {
     window.scroll(0,0)
 
     if (environment.token == '') {
-
-
-      this.getAllProdutos()
-      this.getAllCategoria()
+      this.router.navigate(['/produtos'])
     }
 
+    this.findAllCategoria()
     this.findAllProdutos()
+    this.getAllCategoria()
+    this.getAllProdutos()
   }
+  
   findAllProdutos() {
     this.produtoService.getAllProduto().subscribe((resp: Produto[]) => {
       this.listaProduto = resp
     })
   }
 
+  getAllCategoria() {
+    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
+    })
+  }
 
-  cadastrar() {
-    this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {
-      this.produto = resp
-      alert('Produto cadastrado com sucesso !!')
-      this.findAllProdutos()
-      this.produto = new Produto()
+  findByIdCategoria(){
+    this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categoria) => {
+      this.categoria = resp
     })
   }
 
@@ -78,14 +79,24 @@ export class ProdutosComponent implements OnInit {
     })
   }
 
-  getAllCategoria() {
-    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
-    })
-  }
 
   findAllCategoria() {
     this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
-      this.listacategorias = resp
+      this.listaCategorias = resp
+    })
+  }
+
+  cadastrarProdutos() {
+    this.categoria.id = this.idCategoria
+    this.produto.categoria = this.categoria
+
+    this.user.id = this.idUser
+    this.produto.usuario = this.user
+
+    this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {
+      this.produto = resp
+      alert('Produto cadastrado com sucesso !!')
+      this.produto = new Produto()
     })
   }
 
@@ -94,7 +105,6 @@ export class ProdutosComponent implements OnInit {
     this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria) => {
       this.categoria = resp
       alert('Categoria cadastrada com sucesso!')
-      this.findAllCategoria()
       this.categoria = new Categoria()
 
     })

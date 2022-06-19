@@ -16,7 +16,7 @@
     </div>
 </div>
 
-<!-- Botões cadastrar produto e categoria -->
+<!-- Botão Doe Aqui -->
 <div *ngIf='authService.logado() == true'>
     <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true">
@@ -89,14 +89,82 @@
             </div>
         </div>
     </div>
-    <!-- Fim dos botões cadastrar -->
+
+    <div *ngIf='authService.logado() == true'>
+        <div class="modal fade" id="modalRegisterForm1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold">Cadastrar produto</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mx-3">
+                        <div class="form-group">
+                            <label for="titulo">Nome do produto</label>
+                            <input [(ngModel)]="produto.nome" name="titulo" type="text" class="form-control"
+                                id="titulo">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="foto">Foto do produto</label>
+                            <input [(ngModel)]="produto.foto" name="foto" type="text" class="form-control" id="foto"
+                                placeholder="Link da foto">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="preco">Preço do produto</label>
+                            <input [(ngModel)]="produto.preco" name="preco" type="text" class="form-control" id="rpeco"
+                                placeholder="">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="texto">Descrição</label>
+                            <textarea [(ngModel)]="produto.descricao" class="form-control" name="texto" id="texto"
+                                rows="3"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tema">Escolha uma categoria: </label>
+                            <select class="form-control" name="categoria" id="categoria" [(ngModel)]="idCategoria"
+                                (change)="findByIdCategoria()">
+                                <option *ngFor="let item of listaCategorias" value="{{item.id}}">{{item.produtos}}
+                                </option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button class="btn btn-1" data-dismiss="modal" (click)='cadastrarProdutos()'>Cadastrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 
-    <div class="text-center justify-content-end mt-5">
-        <a href="" class="btn btn-1 btn-rounded mb-4" data-toggle="modal" data-target="#modalRegisterForm">Doe aqui!</a>
+        <div class="text-center justify-content-end mt-5">
+            <a href="" class="btn btn-1 btn-rounded mb-4" data-toggle="modal" data-target="#modalRegisterForm">Doe
+                aqui!</a>
+        </div>
+
+        <div class="text-center justify-content-end mt-5">
+            <a href="" class="btn btn-1 btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">Cadastrar
+                Categoria</a>
+        </div>
+
+        <div class="text-center justify-content-end mt-5">
+            <a href="" class="btn btn-1 btn-rounded mb-4" data-toggle="modal"
+                data-target="#modalRegisterForm1">Cadastrar Produtos</a>
+        </div>
+
     </div>
 </div>
+<!-- Fim dos botão -->
+
+
 
 <div class="container">
     <div class="row">
@@ -117,173 +185,23 @@
         </div>
     </div>
 
-    <div class="row justify-content-center g-4">
-        <!-- card 1 -->
+    <div class="row justify-content-center g-4" *ngFor='let item of listaProduto'>
+        
+        <!-- card -->
         <div class="col-md-3">
             <div class="card mt-3">
                 <div class="product-1 align-items-center p-2 text-center">
-                    <img routerLink="/compra"
-                        src="https://gmedia.playstation.com/is/image/SIEPDC/ps4-slim-image-block-01-en-24jul20?$native--t$"
+                    <img src="{{item.foto}}"
                         alt="" class="rounded" width="160">
-                    <h4>Playstation</h4>
+                    <h4>{{item.nome}}</h4>
 
                     <!-- card info -->
                     <div class="mt-3 info">
-                        <span class="text1 d-block">Lorem ipsum dolor sit</span>
-                        <span class="text1">Lorem ipsum dolor sit</span>
+                        <span class="text1 d-block">{{item.descricao}}</span>
+                        <!-- <span class="text1">Lorem ipsum dolor sit</span> -->
                     </div>
                     <div class="cost preco mt-3 text-dark">
-                        <span>R$1399,00</span>
-                        <div class="star mt-3 align-items-center">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                    <!-- fim do card info -->
-                </div>
-
-                <!-- button dos cards -->
-
-                <!-- Button trigger modal -->
-                <div class="p-3 carrinho text-center text-white mt-3 cursor" >
-                    <a href="#compra" class="text-uppercase">Comprar</a>
-                </div>
-
-               
-
-
-            </div>
-        </div>
-
-        <!-- fim do card 1 -->
-
-        <!-- card 2 -->
-        <div class="col-md-3">
-            <div class="card mt-3">
-                <div class="product-1 align-items-center p-2 text-center">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnySuCd5T0gt61RDq05MWfmyPMLlPotmPy6Q&usqp=CAU"
-                        alt="" class="rounded" width="160">
-                    <h4>Geladeira</h4>
-
-                    <!-- card info -->
-                    <div class="mt-3 info">
-                        <span class="text1 d-block">Lorem ipsum dolor sit</span>
-                        <span class="text1">Lorem ipsum dolor sit</span>
-                    </div>
-                    <div class="cost preco mt-3 text-dark">
-                        <span>R$500,00</span>
-                        <div class="star mt-3 align-items-center">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                    <!-- fim do card info -->
-                </div>
-
-                <!-- button dos cards -->
-
-                <div class="p-3 carrinho text-center text-white mt-3 cursor">
-                    <span class="text-uppercase">Comprar</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- fim do card 2 -->
-
-        <!-- card 3 -->
-        <div class="col-md-3">
-            <div class="card mt-3">
-                <div class="product-1 align-items-center p-2 text-center">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtkOQI4JqygdQEYg-VPtF77MDxBUedu-Lu-A&usqp=CAU"
-                        alt="" class="rounded" width="160">
-                    <h4>Agasalho</h4>
-
-                    <!-- card info -->
-                    <div class="mt-3 info">
-                        <span class="text1 d-block">Lorem ipsum dolor sit</span>
-                        <span class="text1">Lorem ipsum dolor sit</span>
-                    </div>
-                    <div class="cost preco mt-3 text-dark">
-                        <span>R$80,00</span>
-                        <div class="star mt-3 align-items-center">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                    <!-- fim do card info -->
-                </div>
-
-                <!-- button dos cards -->
-
-                <div class="p-3 carrinho text-center text-white mt-3 cursor">
-                    <span class="text-uppercase">Comprar</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- fim do card 3 -->
-
-        <!-- card 4 -->
-        <div class="col-md-3">
-            <div class="card mt-3">
-                <div class="product-1 align-items-center p-2 text-center">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtkOQI4JqygdQEYg-VPtF77MDxBUedu-Lu-A&usqp=CAU"
-                        alt="" class="rounded" width="160">
-                    <h4>Agasalho</h4>
-
-                    <!-- card info -->
-                    <div class="mt-3 info">
-                        <span class="text1 d-block">Lorem ipsum dolor sit</span>
-                        <span class="text1">Lorem ipsum dolor sit</span>
-                    </div>
-                    <div class="cost preco mt-3 text-dark">
-                        <span>R$80,00</span>
-                        <div class="star mt-3 align-items-center">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                    <!-- fim do card info -->
-                </div>
-
-                <!-- button dos cards -->
-
-                <div class="p-3 carrinho text-center text-white mt-3 cursor">
-                    <span class="text-uppercase">Comprar</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- fim do card 4 -->
-
-
-        <!-- card 2 -->
-        <div class="col-md-3">
-            <div class="card mt-3">
-                <div class="product-1 align-items-center p-2 text-center">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnySuCd5T0gt61RDq05MWfmyPMLlPotmPy6Q&usqp=CAU"
-                        alt="" class="rounded" width="160">
-                    <h4>Geladeira</h4>
-
-                    <!-- card info -->
-                    <div class="mt-3 info">
-                        <span class="text1 d-block">Lorem ipsum dolor sit</span>
-                        <span class="text1">Lorem ipsum dolor sit</span>
-                    </div>
-                    <div class="cost preco mt-3 text-dark">
-                        <span>R$500,00</span>
+                        <span>R${{item.preco}}</span>
                         <div class="star mt-3 align-items-center">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -303,6 +221,6 @@
             </div>
         </div>
 
-        <!-- fim do card 2 -->
+        <!-- fim do card -->
 
     </div>
