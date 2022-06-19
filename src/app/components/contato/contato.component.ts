@@ -14,4 +14,9 @@ export class ContatoComponent implements OnInit {
 
   }
 
+  alert(){
+    alert('Enviado!')
+    
+  } 
+
 }
