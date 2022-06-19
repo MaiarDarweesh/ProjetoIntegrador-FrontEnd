@@ -18,23 +18,23 @@ export class CategoriaService {
   }
 
   getAllCategoria(): Observable<Categoria[]> {
-    return this.http.get<Categoria[]>('categorias', this.token)
+    return this.http.get<Categoria[]>('categoria', this.token)
   }
 
   getByIdCategoria(id: number): Observable<Categoria>{
-    return this.http.get<Categoria>(`categorias/${id}`, this.token)
+    return this.http.get<Categoria>(`categoria/${id}`, this.token)
   }
 
   postCategoria(categoria: Categoria): Observable<Categoria> {
-    return this.http.post<Categoria>('categorias', categoria, this.token)
+    return this.http.post<Categoria>('categoria', categoria, this.token)
   }
 
   putCategoria(categoria: Categoria): Observable<Categoria> {
-    return this.http.put<Categoria>('categorias', categoria, this.token)
+    return this.http.put<Categoria>('categoria', categoria, this.token)
   }
 
   deleteCategoria(id: number) {
-    return this.http.delete(`categorias/${id}`, this.token)
+    return this.http.delete(`categoria/${id}`, this.token)
   }
 
 }
