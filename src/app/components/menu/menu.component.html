@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg">
-          <img src="https://i.imgur.com/uAMvmpT.png" width="70px">
+          <img src="https://i.imgur.com/uAMvmpT.png" width="50px">
         <a href="#" class="navbar-brand ml-2">Projeto<b>Vida</b></a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -34,17 +34,9 @@
                 <a *ngIf='authService.logado() == false' routerLink="/login"
                     class="btn btn-primary sign-up-btn">Entrar</a>
 
-
-                <div *ngIf='authService.logado() == true' class="col pt-3 d-flex align-items-center">
-                    <p class="nav-item nav-link btn-hover ">Olá, Visitante!  </p>
-
-                    <a [routerLink]="['/usuario-edit', id]"><i class="fa fa-pencil-square-o mb-3 btn-hover" aria-hidden="true"></i></a>
-
-                    <a href="" routerLink="/carrinho" ><i class="fa fa-cart-plus mb-3 btn-hover" aria-hidden="true"></i></a> 
-
-                    <a (click)='sair()' routerLink='/home' id="sair"><i class="fa fa-sign-out mb-3 btn-hover"
+                    <a  *ngIf='authService.logado() == true' (click)='sair()' routerLink='/home' id="sair"><i class="fa fa-sign-out  btn-hover"
                             aria-hidden="true"></i></a>
-                </div>
+               
 
             </div>
             <!-- fim da Autenticação de usuário -->
@@ -52,6 +44,13 @@
         </div>
   
 </nav>
+
+
+
+
+
+
+
 
 <!-- Modal -->
 <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
