@@ -24,7 +24,7 @@ export class ProdutoService {
   getByIdProduto(id: number): Observable<Produto> {
     return this.http.get<Produto>(`produto/${id}`, this.token)
   }
-
+  
   getByNomeProduto(nome: string): Observable<Produto[]> {
     return this.http.get<Produto[]>(`produto/nome/${nome}`, this.token)
   }
