@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Usuario } from 'src/app/model/Usuario';
 import { UsuarioLogin } from 'src/app/model/UsuarioLogin';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { AuthService } from 'src/app/service/auth.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -11,7 +13,7 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class UsuarioEditComponent implements OnInit {
 
-  usuarioLogin: UsuarioLogin = new UsuarioLogin()
+  usuarioLogin: Usuario = new Usuario()
   idUsuario: number
   confirmarSenha: string;
   tipoVoluntario: string
@@ -19,7 +21,8 @@ export class UsuarioEditComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit() {
@@ -45,12 +48,12 @@ export class UsuarioEditComponent implements OnInit {
     this.usuarioLogin.voluntario = this.tipoVoluntario
 
     if (this.usuarioLogin.senha != this.confirmarSenha) {
-      alert('As senhas estão diferentes')
+      this.alertas.showAlertDanger('As senhas estão diferentes')
     } else {
-      this.authService.cadastrar(this.usuarioLogin).subscribe((resp: UsuarioLogin) => {
+      this.authService.cadastrar(this.usuarioLogin).subscribe((resp: Usuario) => {
         this.usuarioLogin = resp
         this.router.navigate(['/home']) 
-        alert('Usuario atualizado com sucesso! Façao login novamente.')
+        this.alertas.showAlertSuccess('Usuario atualizado com sucesso! Façao login novamente.')
         environment.token = ''
         environment.nome = ''
         environment.id = 0
@@ -62,7 +65,7 @@ export class UsuarioEditComponent implements OnInit {
   }
 
   findByIdUsuario(id: number){
-    this.authService.usuarioById(id).subscribe((resp: UsuarioLogin) => {
+    this.authService.getByIdUsuario(id).subscribe((resp: Usuario) => {
       this.usuarioLogin = resp
     })
   }

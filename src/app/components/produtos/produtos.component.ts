@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Categoria } from 'src/app/model/Categoria';
 import { Produto } from 'src/app/model/Produto';
 import { Usuario } from 'src/app/model/Usuario';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { AuthService } from 'src/app/service/auth.service';
 import { CategoriaService } from 'src/app/service/categoria.service';
 import { ProdutoService } from 'src/app/service/produto.service';
@@ -17,7 +18,7 @@ export class ProdutosComponent implements OnInit {
 
   produto: Produto = new Produto()
   listaProduto: Produto[]
-
+  nomeProduto: string
 
   categoria: Categoria = new Categoria()
   listaCategorias: Categoria[]
@@ -32,7 +33,9 @@ export class ProdutosComponent implements OnInit {
     private router: Router,
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
-    public authService: AuthService
+    public authService: AuthService,
+    private alertas: AlertasService
+
   ) { }
 
   ngOnInit() {
@@ -54,6 +57,18 @@ export class ProdutosComponent implements OnInit {
       this.listaProduto = resp
     })
   }
+
+  findByNomeProduto() {
+
+    if (this.nomeProduto == '') {
+      this.getAllProdutos()
+    } else {
+      this.produtoService.getByNomeProduto(this.nomeProduto).subscribe((resp: Produto[]) => {
+        this.listaProduto = resp
+      })
+    }
+  }
+
 
   getAllCategoria() {
     this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
@@ -95,24 +110,41 @@ export class ProdutosComponent implements OnInit {
 
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {
       this.produto = resp
-      alert('Produto cadastrado com sucesso !!')
+    this.alertas.showAlertSuccess('Produto cadastrado com sucesso !!')
       this.produto = new Produto()
     })
   }
 
-
   cadastrarCategoria() {
     this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria) => {
       this.categoria = resp
-      alert('Categoria cadastrada com sucesso!')
+   this.alertas.showAlertSuccess('Categoria cadastrada com sucesso!')
       this.categoria = new Categoria()
 
     })
   }
 
   alert(){
-    alert('Item doado! Obrigado :)')
+   this.alertas.showAlertSuccess('Item doado! Obrigado :)')
     
+  }
+
+  atualizar(){
+    this.produtoService.putProduto(this.produto).subscribe((resp: Produto)=>{
+      this.produto = resp
+this.alertas.showAlertSuccess('Produto atualizado com sucesso!')
+      this.router.navigate(['/produto'])
+
+
+    })
+  }
+
+  apagar() {
+
+    this.produtoService.deleteProduto(this.idProduto).subscribe(() => {
+     this.alertas.showAlertSuccess('Produto apagada com sucesso!')
+      this.router.navigate(['/home'])
+    })
   }
 
 

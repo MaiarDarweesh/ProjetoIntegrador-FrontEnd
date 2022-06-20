@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Action } from 'rxjs/internal/scheduler/Action';
 import { Produto } from 'src/app/model/Produto';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { ProdutoService } from 'src/app/service/produto.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -17,7 +18,8 @@ export class ProdutoEditComponent implements OnInit {
   constructor( 
     private produtoService: ProdutoService,
     private router: Router,
-    private route:ActivatedRoute
+    private route:ActivatedRoute,
+    private alertas: AlertasService
 
     ){ }
 
@@ -40,7 +42,7 @@ export class ProdutoEditComponent implements OnInit {
   atualizar(){
     this.produtoService.putProduto(this.produto).subscribe((resp: Produto)=>{
       this.produto = resp
-      alert('Produto atualizado com sucesso!')
+      this.alertas.showAlertSuccess('Produto atualizado com sucesso!')
       this.router.navigate(['/produto'])
 
 

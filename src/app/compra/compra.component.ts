@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { AlertasService } from '../service/alertas.service';
 import { ProdutoService } from '../service/produto.service';
 
 @Component({
@@ -16,15 +17,15 @@ export class CompraComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private produtoService: ProdutoService,
-    // private alertas: AlertsService
-  ) { }
+    private alertas: AlertasService  
+    ) { }
 
   ngOnInit() {
     window.scroll(0,0)
   }
 
   alert(){
-    alert('Compra finalizada! Confira seu email.')
+    this.alertas.showAlertSuccess('Compra finalizada! Confira seu email.')
     this.router.navigate(['/produtos'])
   
   }

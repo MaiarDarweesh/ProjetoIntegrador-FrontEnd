@@ -127,3 +127,44 @@
     text-decoration: none;
     color: white; 
   } 
+
+  .box{
+    display:inline-block ;
+  }
+
+  .break {
+    flex-basis: 100%;
+    height: 0;
+  }
+
+
+/* Flex */
+.flex {
+	display: flex;
+}
+
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+.flex-item-1 {
+	flex: 1;
+}
+
+/* Flex Item */
+.item {
+	margin: 5px;
+	background: tomato;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+.cont {
+	max-width: 400px;
+	margin: 0 auto;
+	
+}
+
+.f1{
+    color: black;
+} 

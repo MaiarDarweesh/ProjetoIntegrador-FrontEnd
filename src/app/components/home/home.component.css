@@ -63,11 +63,6 @@ body {
   text-align: center;
 }
 
-a,
-a:hover,
-a:focus {
-  text-decoration: none;
-}
 
 a:hover,
 a:focus {
@@ -859,4 +854,257 @@ a:focus {
 
 .hhh{
 background: #f0d43a;
+}
+
+
+/*teste*/
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  background: #ffffff;
+  color: #000;
+}
+
+.conteiner{
+  display: inline-flex;
+}
+
+.conteiner .estatico {
+  color: #000000;
+  font-size: 60px;
+  font-weight: 400;
+}
+.conteiner .dinamico{
+  margin-left: 15px;
+  line-height: 90px;
+  height: 90px;
+  overflow: hidden;
+}
+
+.dinamico li{
+  color: #31bfb1;
+  list-style: none;
+  font-size: 60px;
+  font-weight: 500;
+  left: 0;
+  position: relative;
+  top: 0;
+  animation: slide 6s steps(4) infinite;
+}
+@keyframes slide{
+  100%{
+    top: -360px
+  }
+}
+.dinamico li span::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  border-left: 2px solid #31bfb1;
+  animation: typing 1.5s steps(10) infinite;
+  background: #ffffff;
+}
+.dinamico li span{
+  position: relative;
+}
+@keyframes typing{
+  100%{
+    left: 100%;
+    margin: 0 -35px 0 35px;
+  }
+}
+.cor{
+  color: #31bfb1;
+}
+.espacamento{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+/*/teste*/ 
+
+
+/*Cards*/
+
+@import "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css";
+
+.underline {
+    height: 3px;
+    width: 100px;
+    background-color: #53a1eb;
+}
+
+.btn:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.btn-primary {
+    background-color: #e0f7f280 !important;
+    border: none;
+}
+
+.btn-1 {
+    background-color: #33cabb !important;
+    border: none;
+}
+
+.btn-1:hover {
+    background-color: #33cabb !important;
+    border: none;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #33cabb !important;
+    color: #f6f3f7 !important;
+}
+
+.bg {
+    background: #f6f3f7;
+}
+
+.container {
+    margin-top: 110px !important;
+}
+
+.card {
+    border: none;
+    outline: none;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.card1 {
+    border: none;
+    outline: none;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.card:hover {
+    transform: translateY(-15px);
+    transition: transform .3s;
+}
+
+.text1 {
+    font-size: 13px;
+    color: #cbcbcb;
+}
+
+.info {
+    line-height: 17px;
+}
+
+.star {
+    color: #fbc02d;
+}
+
+.preco span {
+    color: #33cabb;
+    font-weight: bold;
+}
+
+.carrinho {
+    background: #33cabb;
+}
+
+.carrinho:hover {
+      opacity: .8;
+}
+
+.cursor {
+    cursor: pointer;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.espaco {
+    margin-bottom: 10px;
+}
+
+.esquerda {
+    margin-left: 50px;
+}
+
+.searchBox {
+    color: #33cabb;
+}
+
+.searchText {
+    margin-left: 315px;
+    margin-bottom: 10px;
+}
+
+.searchBar {
+    width: 50%;
+    /* define a largura do campo */
+    position: relative;
+    /* cria o contexto de posicionamento do botão */
+    align-items: center;
+    margin-left: 270px;
+}
+
+label {
+    display: block;
+}
+
+input,
+button {
+    padding: 10px;
+}
+
+.text-uppercase {
+    text-decoration: none;
+    color: white;
+}
+
+.img{
+  height: 160px;
+}
+
+.icons{
+  display:flex;
+  column-gap: 25px;;
+}
+
+.icon{
+  width: 150px;
+  height: 50px;
+  display:  inline-flex;
+  align-items:  center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 20px;
+  color: #000;
+  border-radius: 50%;
+  outline: 2px solid #31bfb1;
+  transition-property: 
+  outline-offset, outline-color,
+  background-color;
+  transition-duration: .25s;
+}
+
+.icon:hover {
+  outline-offset: 4px;
+}
+
+.icon:hover i{
+animation: shake .25s;
+}
+
+.icon--perfil:hover{
+  background-color: #31bfb1;
+  outline-color: #31bfb1;
+}
+
+@keyframes shake {
+  10%{transform: rotate(15deg);}
+  20%{transform: rotate(-15deg);}
+  30%{transform: rotate(15deg);}
+  40%{transform: rotate(-15deg);}
 }

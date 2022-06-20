@@ -23,17 +23,18 @@ export class AuthService {
     return this.http.post<UsuarioLogin> ('usuario/logar', usuarioLogin)
   }
 
-  cadastrar(usuarioLogin: UsuarioLogin): Observable<UsuarioLogin> {
-    return this.http.post<UsuarioLogin>('usuario/cadastrar', usuarioLogin)
+  cadastrar(usuario: Usuario): Observable<Usuario> {
+    return this.http.post<Usuario>('usuario/cadastrar', usuario)
   }
 
-  getByIdUser(id: number): Observable<Usuario> {
+  editar(usuario: Usuario): Observable<Usuario> {
+    return this.http.put<Usuario>('usuarios/atualizar', usuario, this.token)
+  }
+
+  getByIdUsuario(id: number): Observable<Usuario> {
     return this.http.get<Usuario>(`usuario/${id}`)
   }
 
-  usuarioById(id: number):Observable<UsuarioLogin>{
-    return this.http.get<UsuarioLogin>(`usuarios/${id}`, this.token)
-  }
 
   logado(){
     let ok: boolean = false
