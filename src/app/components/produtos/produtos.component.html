@@ -267,13 +267,18 @@
                 <div class="cost preco mt-3 text-dark">
                     <span>R${{item.preco}}</span>
                     <div class="star mt-3 align-items-center">
-                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalEditar"><i
-                                class=" ml-1 fa fa-pencil-square-o btn-hover" aria-hidden="true"></i> </a>
 
-                        <a class="f1" href="#" data-toggle="modal" data-target="#modalDelete">
-                            <i class="fa fa-trash-o" aria-hidden="true"></i>
-                        </a>
+                        <div *ngIf='authService.logado() == true'>
 
+                            <a class="dropdown-item" href="#" [routerLink]="['/produto-edit', item.id]"
+                                data-toggle="modal" data-target="#modalEditar"><i
+                                    class=" ml-1 fa fa-pencil-square-o btn-hover" aria-hidden="true"></i> </a>
+
+                            <a class="f1" href="#" [routerLink]="['/produto-delete', item.id]" data-toggle="modal"
+                                data-target="#modalDelete">
+                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="card-footer p-3 carrinho text-center text-white mt-3 cursor">
