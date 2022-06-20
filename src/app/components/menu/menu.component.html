@@ -30,8 +30,7 @@
 
         <a *ngIf='authService.logado() == false' routerLink="/login" class="btn btn-primary sign-up-btn">Entrar</a>
 
-            <a *ngIf='authService.logado() == true' (click)='sair()' routerLink='/home' id="sair"><i class="fa fa-sign-out mb-3 btn-hover"
-                    aria-hidden="true"></i></a>
+            <a *ngIf='authService.logado() == true' (click)='sair()' routerLink='/home' id="sair">Sair <i class="fa fa-sign-out  btn-hover"                     aria-hidden="true"></i></a>
         </div>
 
     <!-- fim da Autenticação de usuário -->

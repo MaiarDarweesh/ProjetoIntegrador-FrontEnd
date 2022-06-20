@@ -1,4 +1,4 @@
-<div class="ml-4 mt-4">
+<div *ngIf='authService.logado() == true' class="ml-4 mt-4">
     <a href="" class="btn btn-1 btn-rounded mb-4" data-toggle="modal" data-target="#modalRegisterForm">Clique aqui para
         doar!</a>
 </div>
@@ -17,11 +17,103 @@
                         href=""></i></button>
 
             </form>
+            <div class="text-center justify-content-end mt-3">
+
+
+                <a href="" class="btn btn-1 btn-rounded mb-4 ml-3" data-toggle="modal"
+                    data-target="#modalLoginForm">Cadastrar
+                    Categoria</a>
+
+                <a href="" class="btn btn-1 btn-rounded mb-4 ml-3" data-toggle="modal"
+                    data-target="#modalRegisterForm1">Cadastrar Produtos</a>
+
+            </div>
         </div>
+      
+      
+      <!-- card -->
+
+<div class="row justify-content-center g-4" *ngFor='let item of listaProduto'>
+
+    <!-- card -->
+    <div class="col-md-3">
+        <div class="card mt-3">
+            <div class="product-1 align-items-center p-2 text-center">
+
+                <img src="{{item.foto}}" alt="" class="rounded" width="160">
+                <h4>{{item.nome}}</h4>
+
+                <!-- card info -->
+                <div class="mt-3 info">
+                    <span class="text1 d-block">{{item.descricao}}</span>
+                    <!-- <span class="text1">Lorem ipsum dolor sit</span> -->
+                </div>
+                <div class="cost preco mt-3 text-dark">
+                    <span>R${{item.preco}}</span>
+                    <div class="star mt-3 align-items-center">
+
+                        <div *ngIf='authService.logado() == true'>
+
+                            <a class="dropdown-item" href="#" [routerLink]="['/produto-edit', item.id]"
+                                data-toggle="modal" data-target="#modalEditar"><i
+                                    class=" ml-1 fa fa-pencil-square-o btn-hover" aria-hidden="true"></i> </a>
+
+                            <a class="f1" href="#" [routerLink]="['/produto-delete', item.id]" data-toggle="modal"
+                                data-target="#modalDelete">
+                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer p-3 carrinho text-center text-white mt-3 cursor">
+                    <span class="text-uppercase">Adicionar o carrinho</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+  
+        <!-- card -->
+
+        <div class="card-columns">
+            <div class="card text-center mt-5" *ngFor='let item of listaProduto'>
+
+                <!-- card -->
+
+
+                <img src="{{item.foto}}" alt="Produto" class="img rounded ml-5 mt-5 mb-2" width="160px" >
+                <h4>{{item.nome}}</h4>
+
+                <!-- card info -->
+                <div class="mt-3 info">
+                    <span class="text1 d-block">{{item.descricao}}</span>
+                    <!-- <span class="text1">Lorem ipsum dolor sit</span> -->
+                </div>
+                <div class="cost preco mt-4 text-dark">
+                    <span>R${{item.preco}}</span>
+                    <div class="star mt-3 align-items-center">
+
+
+                        <a class="f1 mr-3" href="#" data-toggle="modal" data-target="#modalEditar"><i
+                                class=" ml-1 fa fa-pencil-square-o btn-hover" aria-hidden="true"></i> </a>
+                        <a class="f1" href="#" data-toggle="modal" data-target="#modalDelete">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="card-footer p-3 carrinho text-center text-white mt-3 cursor">
+                    <span class="text-uppercase">Adicionar o carrinho</span>
+                </div>
+            </div>
+
+        </div>
+
     </div>
 </div>
 
-<div class="row mt-3 mb-4">
+<!-- <div class="row mt-3 mb-4">
     <div class="col d-flex justify-content-center">
         <button type="button" class="btn btn-primary mx-1 text-dark">Todos
         </button>
@@ -29,10 +121,10 @@
         <button type="button" class="btn btn-primary mx-1 text-dark">Roupas</button>
         <button type="button" class="btn btn-primary mx-1 text-dark">Brinquedos</button>
     </div>
-</div>
+</div> -->
 
 <!--Funções logadas -->
-<div *ngIf='authService.logado() == true'>
+<div>
     <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -63,6 +155,7 @@
                         <label for="endereco">Endereço para a retirada</label>
                         <textarea class="form-control" name="endereco" id="endereco" rows="2"></textarea>
                     </div>
+                    <p class="txt i">*Diponivel apenas para São paulo e regiões próximas</p>
 
                 </div>
                 <div class="modal-footer d-flex justify-content-center">
@@ -157,16 +250,6 @@
         </div>
     </div>
 
-    <div class="text-center justify-content-end mt-5">
-
-
-        <a href="" class="btn btn-1 btn-rounded mb-4 ml-3" data-toggle="modal" data-target="#modalLoginForm">Cadastrar
-            Categoria</a>
-
-        <a href="" class="btn btn-1 btn-rounded mb-4 ml-3" data-toggle="modal"
-            data-target="#modalRegisterForm1">Cadastrar Produtos</a>
-
-    </div>
 
 
 </div>
@@ -186,7 +269,7 @@
             <div class="modal-body mx-3">
                 <div class="form-group">
                     <label for="titulo">Nome do produto</label>
-                    <input [(ngModel)]="produto.nome" name="titulo" type="text" class="form-control" id="titulo">
+                    <input [(ngModel)]="produto.nome"  name="titulo" type="text" class="form-control" id="titulo">
                 </div>
 
                 <div class="form-group">
@@ -239,54 +322,18 @@
             </div>
             <div class="modal-body">
                 Você tem certeza que deseja apagar esse produto?</div>
+                <div class="row mb-4">
+                    <div class="col-md-12">
+                         <h5 class="text-center text-primary">{{produto.nome}}</h5>
+                        </div>
+                    </div>
             <div class="d-flex justify-content-center mb-3">
                 <button class="btn btn-danger mr-4" data-dismiss="modal" routerLink='/produto'>Cancelar</button>
                 <button class="btn btn-success" data-dismiss="modal" (click)='apagar()'>Apagar</button>
             </div>
         </div>
     </div>
+
 </div>
 
-<!-- card -->
-
-<div class="row justify-content-center g-4" *ngFor='let item of listaProduto'>
-
-    <!-- card -->
-    <div class="col-md-3">
-        <div class="card mt-3">
-            <div class="product-1 align-items-center p-2 text-center">
-
-                <img src="{{item.foto}}" alt="" class="rounded" width="160">
-                <h4>{{item.nome}}</h4>
-
-                <!-- card info -->
-                <div class="mt-3 info">
-                    <span class="text1 d-block">{{item.descricao}}</span>
-                    <!-- <span class="text1">Lorem ipsum dolor sit</span> -->
-                </div>
-                <div class="cost preco mt-3 text-dark">
-                    <span>R${{item.preco}}</span>
-                    <div class="star mt-3 align-items-center">
-
-                        <div *ngIf='authService.logado() == true'>
-
-                            <a class="dropdown-item" href="#" [routerLink]="['/produto-edit', item.id]"
-                                data-toggle="modal" data-target="#modalEditar"><i
-                                    class=" ml-1 fa fa-pencil-square-o btn-hover" aria-hidden="true"></i> </a>
-
-                            <a class="f1" href="#" [routerLink]="['/produto-delete', item.id]" data-toggle="modal"
-                                data-target="#modalDelete">
-                                <i class="fa fa-trash-o" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-footer p-3 carrinho text-center text-white mt-3 cursor">
-                    <span class="text-uppercase">Adicionar o carrinho</span>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
 </div>

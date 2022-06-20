@@ -9,11 +9,15 @@
 
     <div class="row d-flex justify-content-center">
         <div class="col-md-6">
-
             <h6 class="mb-2">Atualize a descrição do produto</h6>
             <div class="form-grup">
                 <input type="text" class="form-control" id="descricao" placeholder="Descrição"
                     [(ngModel)]='produto.descricao'>
+
+
+        <div class="form-grup">
+                <label for="descricao">Descrição</label>
+                <input type="text" class="form-control" id="descricao" [(ngModel)] = 'produto.descricao'>
 
             </div>
 
