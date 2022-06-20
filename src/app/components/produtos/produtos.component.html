@@ -50,9 +50,9 @@
                     <div class="star mt-3 align-items-center">
 
 
-                        <a class="f1 mr-3" href="#" data-toggle="modal" data-target="#modalEditar"><i
+                        <a class="f1 mr-3" href="#" [routerLink]="['/produto-edit', item.id]" ><i
                                 class=" ml-1 fa fa-pencil-square-o btn-hover" aria-hidden="true"></i> </a>
-                        <a class="f1" href="#" data-toggle="modal" data-target="#modalDelete">
+                        <a class="f1" href="#" [routerLink]="['/produto-delete', item.id]">
                             <i class="fa fa-trash-o" aria-hidden="true"></i>
                         </a>
 
