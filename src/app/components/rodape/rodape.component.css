@@ -1,27 +1,65 @@
-ul.social-network {
-    list-style: none;
-    padding: 0;
-}
-ul.social-network li{
-    display: inline;
-    margin: 0;
-    padding: 5px;
+/*rodape*/
+.logo{
+    width: 140px;
 }
 
-.fa{
-    font-size: 35pt;
-    color: white;
-    padding: 10px;
+.fonte{
+    font-size: medium;
 }
 
-.fa-facebook-square:hover{
-    color: #3b5998;
+
+.pt-4, .py-4 {
+    padding-top: 1rem!important;
 }
 
-.fa-instagram:hover{
-color: #c13584;
+.footer-hover:hover{
+	color: #33cabb!important;
 }
 
-.fa-linkedin:hover{
-color: #0072b1;
+a:hover{
+	color: #888;
+    color: #33cabb!important;
+}
+
+.fa:hover{
+    font-size: 15pt;
+}
+
+.navbar {
+	padding-left: 16px;
+	padding-right: 16px;
+	border-radius: 0;
+}
+.nav-link img {
+	border-radius: 50%;
+	width: 36px;
+	height: 36px;
+	margin: -8px 0;
+	float: left;
+	margin-right: 10px;
+}
+.navbar .navbar-brand {
+	padding-left: 0;
+	font-size: 20px;
+	padding-right: 50px;
+}
+.navbar .navbar-brand b {
+	color: #33cabb;		
+}
+.navbar .form-inline {
+	display: inline-block;
+}
+.navbar a {
+	color: #888;
+	font-size: 15px;
+}
+
+.btn-hover:hover{
+	color: #33cabb!important;
+}
+
+.cor1
+
+.cor2{
+	color:#ca3333;
 }
