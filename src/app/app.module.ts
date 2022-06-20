@@ -23,6 +23,8 @@ import { VoluntarioComponent } from './voluntario/voluntario.component';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
 import { AlertasComponent } from './alertas/alertas.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { OrderModule } from 'ngx-order-pipe';
 
 
 @NgModule({
@@ -48,14 +50,16 @@ import { AlertasComponent } from './alertas/alertas.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot(),
+    OrderModule
   ],
   providers: [{
     provide: LocationStrategy,
     useClass: HashLocationStrategy,
-    },
+  },
   { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true }
-],
+  ],
   bootstrap: [AppComponent],
 })
-export class AppModule{}
+export class AppModule { }

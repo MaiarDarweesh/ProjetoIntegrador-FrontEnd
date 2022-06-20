@@ -239,90 +239,49 @@
             </div>
             <div class="modal-body">
                 Você tem certeza que deseja apagar esse produto?</div>
-                        <div class="d-flex justify-content-center mb-3">
+            <div class="d-flex justify-content-center mb-3">
                 <button class="btn btn-danger mr-4" data-dismiss="modal" routerLink='/produto'>Cancelar</button>
                 <button class="btn btn-success" data-dismiss="modal" (click)='apagar()'>Apagar</button>
             </div>
         </div>
     </div>
-</div> 
+</div>
 
 <!-- card -->
 
-<section *ngFor='let item of listaProduto'>
-    <div class="row">
-        <div class="col md-3 product-1 align-items-center p-2 text-center">
-            <img src="{{item.foto}}" alt="" class="rounded" width="160">
-            <h4>{{item.nome}}</h4>
+<div class="row justify-content-center g-4" *ngFor='let item of listaProduto'>
 
-            <!-- card info -->
-            <div class="mt-3 info">
-                <span class="text1 d-block">{{item.descricao}}</span>
-                <!-- <span class="text1">Lorem ipsum dolor sit</span> -->
-            </div>
-            <div class="cost preco mt-3 text-dark">
-                <span>R${{item.preco}}</span>
-                <div class="star mt-3 align-items-center">
-                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalEditar"><i
-                            class=" ml-1 fa fa-pencil-square-o btn-hover" aria-hidden="true"></i> </a>
-
-                    <a class="f1" href="#" data-toggle="modal" data-target="#modalDelete">
-                        <i class="fa fa-trash-o" aria-hidden="true"></i>
-                    </a>
-
-                </div>
-            </div>
-            <div class="card-footer p-3 carrinho text-center text-white mt-3 cursor">
-                <span class="text-uppercase">Adicionar o carrinho</span>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section class="container flex">
-    <div class="row d-flex justify-content-start">
-
-        <div class="col-md-3 mt-3">
+    <!-- card -->
+    <div class="col-md-3">
+        <div class="card mt-3">
             <div class="product-1 align-items-center p-2 text-center">
 
-            </div>
-            <!-- fim do card info -->
-            <!-- button dos cards -->
+                <img src="{{item.foto}}" alt="" class="rounded" width="160">
+                <h4>{{item.nome}}</h4>
 
+                <!-- card info -->
+                <div class="mt-3 info">
+                    <span class="text1 d-block">{{item.descricao}}</span>
+                    <!-- <span class="text1">Lorem ipsum dolor sit</span> -->
+                </div>
+                <div class="cost preco mt-3 text-dark">
+                    <span>R${{item.preco}}</span>
+                    <div class="star mt-3 align-items-center">
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalEditar"><i
+                                class=" ml-1 fa fa-pencil-square-o btn-hover" aria-hidden="true"></i> </a>
+
+                        <a class="f1" href="#" data-toggle="modal" data-target="#modalDelete">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="card-footer p-3 carrinho text-center text-white mt-3 cursor">
+                    <span class="text-uppercase">Adicionar o carrinho</span>
+                </div>
+            </div>
 
         </div>
 
-
-
     </div>
-</section>
-
-<!--Fim do card-->
+</div>
