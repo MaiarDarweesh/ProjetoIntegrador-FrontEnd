@@ -22,6 +22,7 @@ import { CompraComponent } from './compra/compra.component';
 import { VoluntarioComponent } from './voluntario/voluntario.component';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
+import { AlertasComponent } from './alertas/alertas.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component
     CompraComponent,
     VoluntarioComponent,
     CarrinhoComponent,
-    UsuarioEditComponent
+    UsuarioEditComponent,
+    AlertasComponent
   ],
   imports: [
     BrowserModule,
