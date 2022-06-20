@@ -6,53 +6,126 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-ul.social-network{
+ul.social-network {
     list-style: none;
     padding: 0;
 }
 
-.fa-linkedin-square{
+.fa-linkedin-square {
     font-size: 35pt;
 }
 
-.card{
-    margin-top: 20px;  
+.card {
+    margin-top: 20px;
 }
 
-.img{
+.img {
     height: 344.01px;
 }
 
-li{
+li {
     text-align: center;
 }
 
-h5{
+h5 {
     text-align: center;
 }
 
-p{
+p {
     text-align: center;
 }
 
 
-.fa{
+.fa {
     font-size: 35pt;
     padding: 16px;
 }
 
-.fa-linkedin-square{
+.fa-linkedin-square {
     color: #0a66c2;
 }
 
-.fa-github{
+.fa-github {
     color: black;
 }
 
-.fa-linkedin-square:hover{
+.fa-linkedin-square:hover {
     color: #b7b7b7;
 }
 
-.fa-github:hover{
+.fa-github:hover {
     color: #c5bbbb;
+}
+
+
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+.rotatingList {
+    width: 100%;
+    height: 200px;
+    position:relative;
+}
+
+.list,
+.list-bis {
+    width: 3700px;
+    position: absolute;
+    white-space: nowrap;
+    display: inline-block;
+    animation-name: pan;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.list-bis {
+    left: 1850px;
+}
+
+.card2 {
+    height: 100px;
+    width: 200px;
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 30px;
+    float: left;
+    overflow: hidden;
+    text-align: center;
+    padding-top: 15px;
+    color: rgb(0, 0, 0);
+}
+
+.card1 {
+    background: #ffffff;
+}
+
+.card2 {
+    background: #ffffff;
+}
+
+.card3 {
+    background: #ffffff;
+}
+
+.card4 {
+    background: #ffffff;
+}
+
+.card5 {
+    background: #ffffff;
+}
+
+@keyframes pan {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-1850px);
+    }
 }

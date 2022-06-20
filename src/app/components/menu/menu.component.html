@@ -1,10 +1,11 @@
 <nav class="navbar navbar-expand-lg">
-          <img src="https://i.imgur.com/uAMvmpT.png" width="70px">
-        <a href="#" class="navbar-brand ml-2">Projeto<b>Vida</b></a>
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- Collection of nav links, forms, and other content for toggling -->
+    <img src="https://i.imgur.com/uAMvmpT.png" width="70px">
+    <a href="#" class="navbar-brand ml-2">Projeto<b>Vida</b></a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Collection of nav links, forms, and other content for toggling -->
+    <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
         <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
             <div class="navbar-nav">
 
@@ -14,43 +15,36 @@
 
                 <a href="#contato" class="nav-item nav-link btn-hover">Contato</a>
 
-                 <a href="#sobre" class="dropdown-item btn-hover">Idealizadores</a>
+                <a href="#sobre" class="dropdown-item btn-hover">Idealizadores</a>
+
+                <a href="#sobre" class="dropdown-item btn-hover" data-toggle="modal" data-target="#modalExemplo">Saiba
+                    mais</a>
 
             </div>
-            <div class="nav-item dropdown">
-                <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle btn-hover">O Projeto</a>
-                <div class="dropdown-menu">
-                   
-                    <a href="#voluntario" class="dropdown-item btn-hover">Seja um Voluntário</a>
-                    <a href="#" class="dropdown-item btn-hover" data-toggle="modal" data-target="#modalExemplo">Saiba
-                        mais</a>
-                </div>
-            </div>
-
-            <!-- Autenticação de usuário -->
-
-            <div class="navbar-nav ml-auto action-buttons">
-
-                <a *ngIf='authService.logado() == false' routerLink="/login"
-                    class="btn btn-primary sign-up-btn">Entrar</a>
-
-
-                <div *ngIf='authService.logado() == true' class="col pt-3 d-flex align-items-center">
-                    <p class="nav-item nav-link btn-hover ">Olá, Visitante!  </p>
-
-                    <a [routerLink]="['/usuario-edit', id]"><i class="fa fa-pencil-square-o mb-3 btn-hover" aria-hidden="true"></i></a>
-
-                    <a href="" routerLink="/carrinho" ><i class="fa fa-cart-plus mb-3 btn-hover" aria-hidden="true"></i></a> 
-
-                    <a (click)='sair()' routerLink='/home' id="sair"><i class="fa fa-sign-out mb-3 btn-hover"
-                            aria-hidden="true"></i></a>
-                </div>
-
-            </div>
-            <!-- fim da Autenticação de usuário -->
- 
         </div>
-  
+
+        <!-- Autenticação de usuário -->
+
+        <div class="navbar-nav ml-auto action-buttons">
+
+            <a *ngIf='authService.logado() == false' routerLink="/login" class="btn btn-primary sign-up-btn">Entrar</a>
+
+
+            <div *ngIf='authService.logado() == true' class="col pt-3 d-flex align-items-center">
+                <p class="nav-item nav-link btn-hover ">Olá, Visitante! </p>
+
+                <a [routerLink]="['/usuario-edit', id]"><i class="fa fa-pencil-square-o mb-3 btn-hover"
+                        aria-hidden="true"></i></a>
+
+                <a href="" routerLink="/carrinho"><i class="fa fa-cart-plus mb-3 btn-hover" aria-hidden="true"></i></a>
+
+                <a (click)='sair()' routerLink='/home' id="sair"><i class="fa fa-sign-out mb-3 btn-hover"
+                        aria-hidden="true"></i></a>
+            </div>
+
+        </div>
+        <!-- fim da Autenticação de usuário -->
+    </div>
 </nav>
 
 <!-- Modal -->
